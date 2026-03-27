@@ -1,0 +1,13 @@
+{% lang-fragment disclaimer.md %}
+
+<% tags.each do |profile| %>
+### [<%= profile[:title] %>](<%= profile[:link] %>) ###
+
+<%- if profile[:tag_elements].any? -%>
+**<%= Config.tag %> Elements:**
+<%- profile[:tag_elements].each do |element| -%>
+* <%= element[:target] %>: <%= element[:short] %>
+<%- end -%>
+<%- end -%>
+
+<% end %>

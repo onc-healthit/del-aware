@@ -1,0 +1,16 @@
+services:
+  del-aware:
+    image: del-aware
+    container_name: del-aware
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./example:/app/example        # Mount the example directory for DEL files
+      - ../del-aware-qi-core:/app/ig  # Mount the IG source
+    environment:
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
+    stdin_open: true
+    tty: true
+    command: bin/delaware version

@@ -1,0 +1,35 @@
+# IG name
+name: 'US Quality Core'
+
+# IG identifier
+ig_id: us-quality-core
+
+# IG base URL
+base_url: http://fhir.org/guides/astp/us-quality-core
+
+# IG FHIR version
+fhir_version: 4.0.1
+
+# Base US Core version
+us_core_version: 6.1.0
+
+# Major STU version of input IG
+stu_version: 6
+
+# IG output version
+version: 0.1.0
+
+# Date of version "release"
+date: 2026-03-31
+
+# Required data element tag
+tag: USCDI+ Quality
+
+# Data element tag ID
+tag_id: uscdiplusquality
+
+# Remote location of a cqf-tooling jar (for modelinfo generation)
+cqf_tooling_binary: https://search.maven.org/remotecontent?filepath=org/opencds/cqf/tooling-cli/3.6.0/tooling-cli-3.6.0.jar
+
+# Location of additional content directory
+content: example/content

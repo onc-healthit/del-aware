@@ -1,0 +1,8 @@
+<%- if tags[:tag_elements].any? -%>
+<b><%= Config.tag %> Elements:</b>
+<ul>
+<%- tags[:tag_elements].each do |element| -%>
+<li><%= element[:target] %>: <%= element[:short] %></li>
+<%- end -%>
+</ul>
+<%- end -%>

@@ -1,0 +1,120 @@
+### In-Scope USCDI+ Quality V1 Data Elements
+
+Only those USCDI+ Quality V1 data classes and elements that are required to
+be implemented for conformance to this guide are included in this mapping table.
+
+- In scope elements are determined by their support in the current USCDI+ Quality V1 baseline, which includes USCDI v3.1, US Core 6.1.0, and/or QI-Core 6.0.0.
+- In scope elements also include data elements that are used by 2026 draft CMS eCQMs, which are based on QI-Core 6.0.0.
+
+The mapping table lists how USCDI+ Quality V1 data classes and elements map to the US Quality Core profiles defined in this guide, where applicable; otherwise, US Core 6.1.0 profiles apply.
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th class="col-sm-4">USCDI+ Quality Data Class / Element</th>
+            <th class="col-sm-4">Implement with US Quality Core Profile(s)</th>
+            <th class="col-sm-4">Implement with US Core Profile(s)</th>
+        </tr>
+    </thead>
+    <% in_scope_data_elements.each do |class_name, elements| %>
+        <thead>
+            <tr>
+                <th class="col-sm-4"><%= class_name %></th>
+                <th class="col-sm-4"></th>
+                <th class="col-sm-4"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <%- elements.each do |name, details| -%>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;•<%= name %></td>
+                    <td>
+                        <%- details[:qi_core_profiles].each do |profile| -%>
+                            <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a><br />
+                        <%- end -%>
+                    </td>
+                    <td>
+                        <%- details[:us_core_profiles].each do |profile| -%>
+                            <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a><br />
+                        <%- end -%>
+                    </td>
+                </tr>
+            <%- end -%>
+        </tbody>
+    <%- end -%>
+</table>
+
+### Out-of-Scope USCDI+ Quality V1 Data Elements
+
+The following data elements in USCDI+ Quality V1 are out of scope for the
+conformance expectations of this guide. Data elements listed
+here may map to newer published versions of QI-Core or US Core, and the applicable versions are indicated in parenthesis next to the profile.
+
+USCDI+ Quality V1 elements that do not have a
+mapping in the table below indicate those elements are not identified as mandatory or Must Support, or tagged
+(QI), (QI-Core), or "Additional USCDI" in any of the newer versions of QI-Core or
+US Core, including QI-Core 7.0.1 and 8.0.0-ballot, US Core 7.0.0, 8.0.1, and 9.0.0-ballot.
+
+<table class="table table-condensed">
+    <thead>
+        <tr>
+            <th class="col-sm-4">USCDI+ Quality Data Class / Element</th>
+            <th class="col-sm-4">Relevant QI-Core Profile(s)</th>
+            <th class="col-sm-4">Relevant US Core Profile(s)</th>
+        </tr>
+    </thead>
+    <% out_of_scope_data_elements.each do |class_name, elements| %>
+        <thead>
+            <tr>
+                <th class="col-sm-4"><%= class_name %></th>
+                <th class="col-sm-4"></th>
+                <th class="col-sm-4"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <%- elements.each do |name, details| -%>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;•<%= name %></td>
+                    <td>
+                        <%- details[:qi_core_profiles].each do |profile| -%>
+                            <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a><br />
+                        <%- end -%>
+                    </td>
+                    <td>
+                        <%- details[:us_core_profiles].each do |profile| -%>
+                            <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a><br />
+                        <%- end -%>
+                    </td>
+                </tr>
+            <%- end -%>
+        </tbody>
+    <%- end -%>
+</table>
+
+### Summary List of In-Scope Profiles for Conformance
+
+US Quality Core is derived from QI-Core v6.0.0 and includes inherited copies of all QI-Core profiles, regardless of whether they are applicable to USCDI+ Quality V1. Per the [conformance expectations](general-requirements.html) and the [capability statements](capability-statements.html) in this guide, only US Quality Core profiles that include at least one USCDI+ Quality–flagged element (as defined in [Must Support](must-support.html)) are in scope for conformance and SHALL be supported.
+
+The following profiles include at least one USCDI+ Quality–flagged element and **SHALL** be supported:
+
+<ul>
+<% in_scope_profiles.each do |profile| %>
+    <li>
+        <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a>
+    </li>
+<%- end -%>
+</ul>
+
+### Summary List of Out-of-Scope Profiles for Conformance
+
+Some profiles in this guide are inherited from QI-Core v6.0.0 but do not include any USCDI+ Quality–flagged elements (as defined in [Must Support](must-support.html)). These profiles are out-of-scope for USCDI+ Quality V1 conformance but are included to ease adoption for systems that currently support QI-Core v6.0.0.
+
+The following profiles do not include any USCDI+ Quality–flagged elements and **MAY** be supported:
+
+<ul>
+<% out_of_scope_profiles.each do |profile| %>
+    <li>
+        <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a>
+    </li>
+<%- end -%>
+</ul>
