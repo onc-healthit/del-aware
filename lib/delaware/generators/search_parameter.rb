@@ -46,9 +46,7 @@ module Delaware
 
           search_param_hash = search_param_hash.each_with_object({}) do |(k, v), new_hash|
             new_hash[k] = v
-            if k == 'comparator'
-              new_hash['_comparator'] = comparator_result[:extensions]
-            end
+            new_hash['_comparator'] = comparator_result[:extensions] if k == 'comparator'
           end
 
           @output ||= JSON.pretty_generate(search_param_hash)
@@ -101,9 +99,9 @@ module Delaware
           return metadata[:expression].present? ? metadata[:expression] : "#{base}.#{metadata[:code]}"
         end
 
-        return 'Task.for.where(resolve() is Patient)' if base == 'Task'
-
-        return "#{base}.subject.where(resolve() is Patient)" if (param == 'patient') && FHIR.const_get(base)::SEARCH_PARAMS.include?('subject')
+        if (param == 'patient') && FHIR.const_get(base)::SEARCH_PARAMS.include?('subject')
+          return "#{base}.subject.where(resolve() is Patient)"
+        end
 
         return "#{base}.subject.where(resolve() is Patient)" if param == 'subject'
 

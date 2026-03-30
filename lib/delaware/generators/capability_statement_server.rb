@@ -164,7 +164,7 @@ module Delaware
               end
 
               if search_parameter_metadata(type).present?
-                params = search_parameter_metadata(type)
+                params = search_parameter_metadata(type, exclude_patient: true)
                 params.each do |metadata|
                   combo_extension = FHIR::R4::Extension.new({
                                                               url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination'
@@ -233,7 +233,7 @@ module Delaware
           end
 
           if search_parameter_metadata(type).present?
-            params = search_parameter_metadata(type)
+            params = search_parameter_metadata(type, exclude_patient: true)
             params.each do |metadata|
               param = FHIR::R4::CapabilityStatement::Rest::Resource::SearchParam.new
               param.name = metadata[:code]
@@ -409,8 +409,9 @@ module Delaware
         Delaware::Helpers::FhirResourceDetails.pcp_element_search_parameter(resource, primary_code_path)
       end
 
-      def search_parameter_metadata(resource)
-        Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource)
+      def search_parameter_metadata(resource, exclude_patient: false)
+        params = Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource)
+        exclude_patient ? params.select { |p| p[:code] != 'patient' } : params
       end
 
       def search_parameter_combination(resource)
@@ -441,7 +442,11 @@ module Delaware
           SearchParameter.generate(profile, patient_param, base_output_dir) unless patient_param.nil?
           SearchParameter.generate(profile, code_param, base_output_dir) unless code_param.nil?
 
-          search_param_metadata.each { |metadata| SearchParameter.generate(profile, nil, base_output_dir, metadata) } if search_param_metadata.present?
+          next unless search_param_metadata.present?
+
+          search_param_metadata.each do |metadata|
+            SearchParameter.generate(profile, nil, base_output_dir, metadata)
+          end
         end
 
         File.write(output_file_name, output)
