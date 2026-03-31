@@ -121,7 +121,3 @@ bundle exec rubocop
 ```sh
 bin/console
 ```
-
-## GitHub Actions Workflows
-
-This repository includes GitHub Actions workflows that replicate the functionality of the GitLab CI/CD pipelines. These workflows are located in the `.github/workflows` directory and are not triggered automatically. To manually run these workflows, use the "workflow_dispatch" trigger in the GitHub Actions interface.
