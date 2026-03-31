@@ -257,6 +257,13 @@ module Delaware
             expression: 'ServiceRequest.authoredOn',
             comparator: DEFAULT_COMPARATORS
           }
+        ],
+        'Task' => [
+          {
+            code: 'patient',
+            type: 'reference',
+            expression: 'Task.for.where(resolve() is Patient)'
+          }
         ]
       }.freeze
 
