@@ -1,0 +1,12 @@
+.DS_Store
+.byebug_history
+.vscode/*
+.rspec_status
+cache/*
+!cache/*.json
+output/*
+!output/.keep
+inferno/*
+!inferno/.keep
+gofsh-output*
+node_modules/

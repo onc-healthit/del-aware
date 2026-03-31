@@ -1,0 +1,50 @@
+name: CI
+
+on: push
+
+env:
+  RUBY_VERSION: '3.3.6'
+
+jobs:
+  common-setup:
+    name: Common Setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+  rubocop:
+    name: Rubocop
+    runs-on: ubuntu-latest
+    needs: common-setup
+    timeout-minutes: 10
+    steps:
+      - name: Run Rubocop
+        run: bundle exec rubocop
+
+  bundler-audit:
+    name: Bundler Audit
+    runs-on: ubuntu-latest
+    needs: common-setup
+    timeout-minutes: 10
+    steps:
+      - name: Run Bundler Audit
+        run: bundle exec bundler-audit
+
+  rspec:
+    name: RSpec
+    runs-on: ubuntu-latest
+    needs: common-setup
+    timeout-minutes: 10
+    steps:
+      - name: Run RSpec
+        run: bundle exec rspec

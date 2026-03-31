@@ -411,7 +411,7 @@ module Delaware
 
       def search_parameter_metadata(resource, exclude_patient: false)
         params = Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource)
-        exclude_patient ? params.select { |p| p[:code] != 'patient' } : params
+        exclude_patient ? params.reject { |p| p[:code] == 'patient' } : params
       end
 
       def search_parameter_combination(resource)
