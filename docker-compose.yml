@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./example:/app/example        # Mount the example directory for DEL files
-      - ../del-aware-qi-core:/app/ig  # Mount the IG source
+      - ../us-quality-core:/app/ig  # Mount the IG source
     environment:
       - LANG=C.UTF-8
       - LC_ALL=C.UTF-8

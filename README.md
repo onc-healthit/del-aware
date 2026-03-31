@@ -1,6 +1,6 @@
 # DEL-AWARE
 
-DEL-AWARE is a tool for automating the application of requirements sourced from a USCDI+ Data Element List (DEL) to a FHIR Implementation Guide (IG). It is intended to be used to help generate and maintain these IGs over time. DEL-AWARE was primarily written with [QI-Core](http://hl7.org/fhir/us/qicore) and [USCDI+ Quality](https://uscdiplus.healthit.gov/uscdiplus) in mind, but other USCDI+ domains and FHIR IGs may find utility as well.
+DEL-AWARE is a tool for automating the application of requirements sourced from a USCDI+ Data Element List (DEL) to a FHIR Implementation Guide (IG). It is intended to be used to help generate and maintain these IGs over time. DEL-AWARE was primarily written with [US Quality Core](https://github.com/FHIR/us-quality-core) and [USCDI+ Quality](https://uscdiplus.healthit.gov/uscdiplus) in mind, but other USCDI+ domains and FHIR IGs may find utility as well.
 
 DEL-AWARE ingests an IG, a USCDI+ Data Element List with IG profile and element mappings, and updates the IG source to reference all the elements listed in the data element list via Profile extension tagging. It also generates and adds CapabilityStatement(s), SearchParameter(s), narratives (key element summary and profile introductions), ModelInfo files, and more.
 
@@ -33,10 +33,10 @@ Note that it is possible to run things via the Docker image directly, but it is 
 
 Apply the given data element list to the given IG source. This will update the IG source in-place. DEL-AWARE applies changes idempotently.
 
-This assumes you have a copy of the `del-aware-qi-core` IG in the same parent directory as DEL-AWARE.
+This assumes you have a copy of the `us-quality-core` IG in the same parent directory as DEL-AWARE.
 
 ```sh
-bin/delaware apply --del=example/del_2026_03_11.json --config=example/config.yaml --ig=../del-aware-qi-core
+bin/delaware apply --del=example/del_2026_03_11.json --config=example/config.yaml --ig=../us-quality-core
 ```
 
 ##### Include CQL ModelInfo (experimental)
@@ -57,7 +57,7 @@ Displays the list of available commands and their usage.
 
 ### Using Docker Compose
 
-In order to persist changes outside of the Docker image environment, you should modify the IG source mount directory in the `.docker-compose.yml` to point at your local IG copy. By default, this is set to `../del-aware-qi-core`, which assumes you have a copy of that IG in the same parent directory as your copy of DEL-AWARE.
+In order to persist changes outside of the Docker image environment, you should modify the IG source mount directory in the `.docker-compose.yml` to point at your local IG copy. By default, this is set to `../us-quality-core`, which assumes you have a copy of that IG in the same parent directory as your copy of DEL-AWARE.
 
 1. Build and start the container:
 
