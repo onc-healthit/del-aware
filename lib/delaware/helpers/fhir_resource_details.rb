@@ -166,15 +166,17 @@ module Delaware
       end
 
       DEFAULT_COMPARATORS = [
-        eq: 'MAY',
-        ne: 'MAY',
-        gt: 'SHALL',
-        ge: 'SHALL',
-        lt: 'SHALL',
-        le: 'SHALL',
-        sa: 'MAY',
-        eb: 'MAY',
-        ap: 'MAY'
+        {
+          eq: 'MAY',
+          ne: 'MAY',
+          gt: 'SHALL',
+          ge: 'SHALL',
+          lt: 'SHALL',
+          le: 'SHALL',
+          sa: 'MAY',
+          eb: 'MAY',
+          ap: 'MAY'
+        }
       ].freeze
 
       # Resource elements that should support date and/or time filtering.

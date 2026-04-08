@@ -45,7 +45,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
         ],
         "us_core_profiles": [
 
@@ -72,7 +72,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
         ],
         "us_core_profiles": [
 
@@ -127,7 +127,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
         ],
         "us_core_profiles": [
 
@@ -154,7 +154,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-adverseevent"
         ],
         "us_core_profiles": [
 
@@ -181,7 +181,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -208,7 +208,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -235,7 +235,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -262,7 +262,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -289,7 +289,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -316,7 +316,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -343,7 +343,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-allergyintolerance"
         ],
         "us_core_profiles": [
 
@@ -382,9 +382,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-careteam",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitioner",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole"
         ],
         "us_core_profiles": [
 
@@ -418,9 +418,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitioner",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
         ],
         "us_core_profiles": [
 
@@ -450,9 +450,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitioner",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
         ],
         "us_core_profiles": [
 
@@ -482,9 +482,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-relatedperson",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-careteam"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careteam"
         ],
         "us_core_profiles": [
 
@@ -517,9 +517,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitioner",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitioner",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-practitionerrole",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
         ],
         "us_core_profiles": [
 
@@ -633,7 +633,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
         ],
         "us_core_profiles": [
           "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1"
@@ -689,8 +689,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
         ],
         "us_core_profiles": [
 
@@ -719,8 +719,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
         ],
         "us_core_profiles": [
 
@@ -748,8 +748,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
         ],
         "us_core_profiles": [
 
@@ -776,7 +776,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
         ],
         "us_core_profiles": [
 
@@ -804,8 +804,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result"
         ],
         "us_core_profiles": [
 
@@ -833,8 +833,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-clinical-result"
         ],
         "us_core_profiles": [
 
@@ -889,7 +889,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
         ],
         "us_core_profiles": [
 
@@ -944,7 +944,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-encounter"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -973,7 +973,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-encounter"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -1001,7 +1001,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-encounter"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -1028,7 +1028,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-encounter"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -1055,7 +1055,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-encounter"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -1082,7 +1082,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-encounter"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -1110,7 +1110,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-claim"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"
         ],
         "us_core_profiles": [
 
@@ -1137,7 +1137,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-location"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"
         ],
         "us_core_profiles": [
 
@@ -1191,7 +1191,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-location"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"
         ],
         "us_core_profiles": [
 
@@ -1218,7 +1218,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-location"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-location"
         ],
         "us_core_profiles": [
 
@@ -1245,7 +1245,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-familymemberhistory"
         ],
         "us_core_profiles": [
 
@@ -1301,7 +1301,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-goal"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal"
         ],
         "us_core_profiles": [
 
@@ -1329,7 +1329,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-goal"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-goal"
         ],
         "us_core_profiles": [
 
@@ -1412,7 +1412,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1439,7 +1439,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1466,7 +1466,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1496,7 +1496,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1523,7 +1523,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1551,7 +1551,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1580,7 +1580,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1608,8 +1608,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-organization"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-organization"
         ],
         "us_core_profiles": [
 
@@ -1636,7 +1636,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1663,7 +1663,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1690,7 +1690,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-coverage"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-coverage"
         ],
         "us_core_profiles": [
 
@@ -1764,10 +1764,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -1803,10 +1803,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -1835,7 +1835,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -1871,10 +1871,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -1910,10 +1910,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -2019,10 +2019,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observationcancelled",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -2118,7 +2118,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunization"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"
         ],
         "us_core_profiles": [
 
@@ -2145,7 +2145,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunization"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"
         ],
         "us_core_profiles": [
 
@@ -2173,7 +2173,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunization"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"
         ],
         "us_core_profiles": [
 
@@ -2200,8 +2200,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunization",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"
         ],
         "us_core_profiles": [
 
@@ -2228,7 +2228,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunization"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization"
         ],
         "us_core_profiles": [
 
@@ -2256,8 +2256,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
         ],
         "us_core_profiles": [
 
@@ -2284,7 +2284,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-lab"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab"
         ],
         "us_core_profiles": [
 
@@ -2339,8 +2339,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
         ],
         "us_core_profiles": [
 
@@ -2368,8 +2368,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
         ],
         "us_core_profiles": [
 
@@ -2536,8 +2536,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
         ],
         "us_core_profiles": [
 
@@ -2565,8 +2565,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-lab",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-lab"
         ],
         "us_core_profiles": [
 
@@ -2594,10 +2594,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-devicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-devicenotrequested",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
         ],
         "us_core_profiles": [
 
@@ -2652,7 +2652,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
         ],
         "us_core_profiles": [
 
@@ -2679,7 +2679,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
         ],
         "us_core_profiles": [
 
@@ -2708,8 +2708,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
         ],
         "us_core_profiles": [
 
@@ -2736,8 +2736,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"
         ],
         "us_core_profiles": [
 
@@ -2773,9 +2773,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
         ],
         "us_core_profiles": [
 
@@ -2809,9 +2809,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
         ],
         "us_core_profiles": [
 
@@ -2839,7 +2839,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
         ],
         "us_core_profiles": [
 
@@ -2866,8 +2866,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone"
         ],
         "us_core_profiles": [
 
@@ -2916,9 +2916,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration"
         ],
         "us_core_profiles": [
 
@@ -2949,7 +2949,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
         ],
         "us_core_profiles": [
 
@@ -2978,8 +2978,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
         ],
         "us_core_profiles": [
 
@@ -3009,10 +3009,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medication"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispense",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministration",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medication"
         ],
         "us_core_profiles": [
 
@@ -3047,9 +3047,9 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationadministrationnotdone",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationnotrequested",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationdispensedeclined"
         ],
         "us_core_profiles": [
 
@@ -3077,7 +3077,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -3105,7 +3105,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -3133,7 +3133,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -3161,7 +3161,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -3250,7 +3250,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-medicationrequest"
         ],
         "us_core_profiles": [
 
@@ -3310,7 +3310,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3337,7 +3337,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3364,7 +3364,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3394,7 +3394,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3421,7 +3421,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3451,7 +3451,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3481,7 +3481,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3511,7 +3511,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3541,7 +3541,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3626,7 +3626,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3656,7 +3656,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3683,7 +3683,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3711,7 +3711,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3744,7 +3744,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3776,7 +3776,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3803,7 +3803,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3830,7 +3830,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
         ],
         "us_core_profiles": [
 
@@ -3857,7 +3857,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-relatedperson"
         ],
         "us_core_profiles": [
 
@@ -3884,7 +3884,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-patient"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-patient"
         ],
         "us_core_profiles": [
 
@@ -3911,7 +3911,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-careplan"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-careplan"
         ],
         "us_core_profiles": [
 
@@ -3938,8 +3938,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"
         ],
         "us_core_profiles": [
 
@@ -3967,7 +3967,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -3995,7 +3995,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4023,7 +4023,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4051,7 +4051,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4079,7 +4079,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4107,7 +4107,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4135,7 +4135,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4163,7 +4163,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4191,7 +4191,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-simple-observation"
         ],
         "us_core_profiles": [
 
@@ -4218,7 +4218,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -4245,7 +4245,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -4272,8 +4272,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
         ],
         "us_core_profiles": [
 
@@ -4327,7 +4327,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -4355,7 +4355,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -4383,7 +4383,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns"
         ],
         "us_core_profiles": [
 
@@ -4413,11 +4413,11 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunization",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunization",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-immunizationnotdone"
         ],
         "us_core_profiles": [
 
@@ -4454,12 +4454,12 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-task",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-taskrejected"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"
         ],
         "us_core_profiles": [
 
@@ -4487,8 +4487,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone"
         ],
         "us_core_profiles": [
 
@@ -4550,12 +4550,12 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-task",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-taskrejected"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"
         ],
         "us_core_profiles": [
 
@@ -4585,10 +4585,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
         ],
         "us_core_profiles": [
 
@@ -4616,10 +4616,10 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
         ],
         "us_core_profiles": [
 
@@ -4756,7 +4756,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest"
         ],
         "us_core_profiles": [
 
@@ -4783,8 +4783,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
         ],
         "us_core_profiles": [
 
@@ -4811,8 +4811,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested"
         ],
         "us_core_profiles": [
 
@@ -5144,7 +5144,7 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/astp/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-observation-screening-assessment"
         ],
         "us_core_profiles": [
 
