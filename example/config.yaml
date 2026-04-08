@@ -5,7 +5,7 @@ name: 'US Quality Core'
 ig_id: us-quality-core
 
 # IG base URL
-base_url: http://fhir.org/guides/astp/us-quality-core
+base_url: http://fhir.org/guides/onc/us-quality-core
 
 # IG FHIR version
 fhir_version: 4.0.1
