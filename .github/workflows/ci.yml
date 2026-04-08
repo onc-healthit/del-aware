@@ -1,7 +1,6 @@
 name: CI
 on:
   push:
-  pull_request:
 
 env:
   RUBY_VERSION: '3.3.6'
@@ -22,7 +21,7 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies
-        run: bundle install --jobs 4 --retry 3
+        run: bundle install
 
       - name: RuboCop
         run: bundle exec rubocop
