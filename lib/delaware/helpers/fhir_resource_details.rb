@@ -97,8 +97,11 @@ module Delaware
         'Encounter' => { 'patient' => 'subject' },
         'Goal' => { 'patient' => 'subject' },
         'Coverage' => { 'patient' => 'beneficiary' },
-        'DeviceRequest' => { 'patient' => 'subject', 'code' => 'code.as(CodeableConcept)',
-                             'do-not-perform' => "extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value" },
+        'DeviceRequest' => {
+          'patient' => 'subject',
+          'code' => 'code.as(CodeableConcept)',
+          'do-not-perform' => "extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
+        },
         'ServiceRequest' => { 'patient' => 'subject', 'do-not-perform' => 'doNotPerform' },
         'MedicationAdministration' => { 'patient' => 'subject', 'code' => 'medication.as(CodeableConcept)' },
         'MedicationDispense' => { 'patient' => 'subject' },
