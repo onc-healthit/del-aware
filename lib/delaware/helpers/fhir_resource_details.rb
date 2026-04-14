@@ -80,6 +80,7 @@ module Delaware
           MedicationDispense
           Procedure
           Task
+          Observation
         ].include? resource_type
       end
 
@@ -96,11 +97,12 @@ module Delaware
         'Encounter' => { 'patient' => 'subject' },
         'Goal' => { 'patient' => 'subject' },
         'Coverage' => { 'patient' => 'beneficiary' },
-        'DeviceRequest' => { 'patient' => 'subject', 'code' => 'code.as(CodeableConcept)' },
-        'ServiceRequest' => { 'patient' => 'subject' },
+        'DeviceRequest' => { 'patient' => 'subject', 'code' => 'code.as(CodeableConcept)',
+                             'do-not-perform' => "extension.where(url = 'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value" },
+        'ServiceRequest' => { 'patient' => 'subject', 'do-not-perform' => 'doNotPerform' },
         'MedicationAdministration' => { 'patient' => 'subject', 'code' => 'medication.as(CodeableConcept)' },
         'MedicationDispense' => { 'patient' => 'subject' },
-        'MedicationRequest' => { 'patient' => 'subject' },
+        'MedicationRequest' => { 'patient' => 'subject', 'do-not-perform' => 'doNotPerform' },
         'MedicationStatement' => { 'patient' => 'subject', 'code' => 'medication.as(CodeableConcept)' },
         'Condition' => { 'patient' => 'subject' },
         'Procedure' => { 'patient' => 'subject' },
@@ -179,7 +181,6 @@ module Delaware
         }
       ].freeze
 
-      # Resource elements that should support date and/or time filtering.
       SEARCH_PARAM_METADATA = {
         'AdverseEvent' => [
           {
@@ -232,9 +233,21 @@ module Delaware
             comparator: DEFAULT_COMPARATORS
           }
         ],
+        'DeviceRequest' => [
+          {
+            code: 'do-not-perform',
+            type: 'token',
+            expression: "DeviceRequest.extension.where(url = 	'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
+          }
+        ],
         'MedicationRequest' => [
           {
             code: 'intent'
+          },
+          {
+            code: 'do-not-perform',
+            type: 'token',
+            expression: 'MedicationRequest.doNotPerform'
           }
         ],
         'Observation' => [
@@ -258,6 +271,11 @@ module Delaware
             code: 'authored',
             expression: 'ServiceRequest.authoredOn',
             comparator: DEFAULT_COMPARATORS
+          },
+          {
+            code: 'do-not-perform',
+            type: 'token',
+            expression: 'ServiceRequest.doNotPerform'
           }
         ],
         'Task' => [
@@ -328,6 +346,16 @@ module Delaware
             expectation: 'SHOULD'
           }
         ],
+        'DeviceRequest' => [
+          {
+            code: %w[patient code],
+            expectation: 'SHALL'
+          },
+          {
+            code: %w[patient do-not-perform],
+            expectation: 'SHALL'
+          }
+        ],
         'DiagnosticReport' => [
           {
             code: %w[patient category],
@@ -356,6 +384,10 @@ module Delaware
           {
             code: %w[patient intent],
             expectation: 'SHALL'
+          },
+          {
+            code: %w[patient do-not-perform],
+            expectation: 'SHALL'
           }
         ],
         'Observation' => [
@@ -370,6 +402,10 @@ module Delaware
           {
             code: %w[patient code],
             expectation: 'SHALL'
+          },
+          {
+            code: %w[patient status],
+            expectation: 'SHALL'
           }
         ],
         'ServiceRequest' => [
@@ -383,6 +419,10 @@ module Delaware
           },
           {
             code: %w[patient code],
+            expectation: 'SHALL'
+          },
+          {
+            code: %w[patient do-not-perform],
             expectation: 'SHALL'
           }
         ]
