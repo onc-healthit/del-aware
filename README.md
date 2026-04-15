@@ -36,7 +36,7 @@ Apply the given data element list to the given IG source. This will update the I
 This assumes you have a copy of the `us-quality-core` IG in the same parent directory as DEL-AWARE.
 
 ```sh
-bin/delaware apply --del=example/del_2026_03_11.json --config=example/config.yaml --ig=../us-quality-core
+bin/delaware apply --del=example/del_2026_04_14.json --config=example/config.yaml --ig=../us-quality-core
 ```
 
 ##### Include CQL ModelInfo (experimental)
