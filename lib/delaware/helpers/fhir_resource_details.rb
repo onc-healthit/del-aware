@@ -247,7 +247,7 @@ module Delaware
           {
             code: 'do-not-perform',
             type: 'token',
-            expression: "DeviceRequest.extension.where(url = 	'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
+            expression: "DeviceRequest.modifierExtension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
           }
         ],
         'MedicationRequest' => [
