@@ -213,6 +213,13 @@ module Delaware
             comparator: DEFAULT_COMPARATORS
           }
         ],
+        'DeviceRequest' => [
+          {
+            code: 'do-not-perform',
+            type: 'token',
+            expression: "DeviceRequest.modifierExtension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
+          }
+        ],
         'Encounter' => [
           {
             code: 'date',
@@ -234,13 +241,6 @@ module Delaware
             type: 'date',
             expression: 'MedicationAdministration.effective',
             comparator: DEFAULT_COMPARATORS
-          }
-        ],
-        'DeviceRequest' => [
-          {
-            code: 'do-not-perform',
-            type: 'token',
-            expression: "DeviceRequest.extension.where(url = 	'http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
           }
         ],
         'MedicationRequest' => [
