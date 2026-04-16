@@ -385,15 +385,19 @@ module Delaware
         ],
         'MedicationRequest' => [
           {
-            code: %w[patient intent],
+            code: %w[patient intent do-not-perform],
             expectation: 'SHALL'
           },
           {
-            code: %w[patient do-not-perform],
+            code: %w[patient intent],
             expectation: 'SHALL'
           }
         ],
         'Observation' => [
+          {
+            code: %w[patient category status],
+            expectation: 'SHALL'
+          },
           {
             code: %w[patient category],
             expectation: 'SHALL'
@@ -404,10 +408,6 @@ module Delaware
           },
           {
             code: %w[patient code],
-            expectation: 'SHALL'
-          },
-          {
-            code: %w[patient status],
             expectation: 'SHALL'
           }
         ],
