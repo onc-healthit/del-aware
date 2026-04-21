@@ -187,7 +187,9 @@ module Delaware
       SEARCH_PARAM_METADATA = {
         'AdverseEvent' => [
           {
-            code: 'recordedDate',
+            code: 'recorded-date',
+            type: 'date',
+            expression: 'AdverseEvent.recordedDate',            
             comparator: DEFAULT_COMPARATORS
           }
         ],
