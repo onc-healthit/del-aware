@@ -189,7 +189,7 @@ module Delaware
           {
             code: 'recorded-date',
             type: 'date',
-            expression: 'AdverseEvent.recordedDate',            
+            expression: 'AdverseEvent.recordedDate',
             comparator: DEFAULT_COMPARATORS
           }
         ],
