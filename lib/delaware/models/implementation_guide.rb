@@ -167,10 +167,10 @@ module Delaware
             next if element.type.nil?
 
             element.type.each do |t|
-              if t.respond_to?(:profile) && t.profile
+              if t.profile
                 t.profile = t.profile.map { |p| pin.call(p) }
               end
-              if t.respond_to?(:targetProfile) && t.targetProfile
+              if t.targetProfile
                 t.targetProfile = t.targetProfile.map { |tp| pin.call(tp) }
               end
             end
