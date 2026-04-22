@@ -39,6 +39,9 @@ module Delaware
       # Update version tags in profiles
       implementation_guide.update_profile_versions
 
+      # Enforce US Core version pinning across baseDefinition and canonical references
+      implementation_guide.enforce_us_core_version_on_canonicals
+
       # Write the updated IG source to the target output location
       Helpers::FileLoader.save_profiles(options[:ig], implementation_guide.profiles)
 

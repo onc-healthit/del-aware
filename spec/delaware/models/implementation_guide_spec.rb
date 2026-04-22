@@ -76,4 +76,44 @@ RSpec.describe Delaware::Models::ImplementationGuide do
       expect(final_annotation_count).to eq(0)
     end
   end
+
+  describe '#enforce_us_core_version_on_canonicals' do
+    it 'pins baseDefinition to the configured US Core version' do
+      config = build(:config)
+      ig = build(:implementation_guide, config: config)
+      profile = ig.profiles['Profile']
+      profile.baseDefinition = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient'
+
+      ig.enforce_us_core_version_on_canonicals
+
+      expect(profile.baseDefinition).to eq('http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0')
+    end
+
+    it 'pins type.profile and type.targetProfile references to the configured US Core version' do
+      config = build(:config)
+      ig = build(:implementation_guide, config: config)
+      profile = ig.profiles['Profile']
+
+      element = profile.differential.element.first
+
+      type_tp = FHIR::R4::ElementDefinition::Type.new
+      type_tp.code = 'Reference'
+      type_tp.targetProfile = ['http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient']
+
+      type_p = FHIR::R4::ElementDefinition::Type.new
+      type_p.code = 'Reference'
+      type_p.profile = ['http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference']
+
+      element.type = [type_tp, type_p]
+
+      ig.enforce_us_core_version_on_canonicals
+
+      updated_types = element.type
+      tp = updated_types.find { |t| t.targetProfile&.any? }
+      pr = updated_types.find { |t| t.profile&.any? }
+
+      expect(tp.targetProfile.first).to eq('http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0')
+      expect(pr.profile.first).to eq('http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0')
+    end
+  end
 end
