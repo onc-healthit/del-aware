@@ -144,6 +144,40 @@ module Delaware
         end
       end
 
+      def enforce_us_core_version_on_canonicals
+        log_info "Ensuring US Core canonicals are pinned to #{Config.us_core_version} in profiles"
+        profiles.each_value do |profile|
+          # Helper to pin a canonical to US Core version
+          pin = lambda { |url|
+            return url if url.nil? || !url.include?('us/core')
+
+            if url.include?('|')
+              base, _ver = url.split('|', 2)
+              "#{base}|#{Config.us_core_version}"
+            else
+              "#{url}|#{Config.us_core_version}"
+            end
+          }
+
+          # pin baseDefinition
+          profile.baseDefinition = pin.call(profile.baseDefinition)
+
+          # pin profile and targetProfile in differential and snapshot
+          [profile.differential&.element, profile.snapshot&.element].compact.flatten.each do |element|
+            next if element.type.nil?
+
+            element.type.each do |t|
+              if t.profile
+                t.profile = t.profile.map { |p| pin.call(p) }
+              end
+              if t.targetProfile
+                t.targetProfile = t.targetProfile.map { |tp| pin.call(tp) }
+              end
+            end
+          end
+        end
+      end
+
       def generate_extensions(base)
         Generators::Extension.generate(resource_output(base))
       end
