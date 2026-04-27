@@ -29,8 +29,17 @@ module Delaware
         ].include?(resource_type)
       end
 
+      def self.exclude_patient_search?(resource_type)
+        %w[
+          ImmunizationRecommendation
+          NutritionOrder
+        ].include?(resource_type)
+      end
+
       def self.patient_search_parameter(resource_type)
-        if FHIR.const_get(resource_type)::SEARCH_PARAMS.include?('patient')
+        if exclude_patient_search?(resource_type)
+          nil
+        elsif FHIR.const_get(resource_type)::SEARCH_PARAMS.include?('patient')
           'patient'
         elsif FHIR.const_get(resource_type)::SEARCH_PARAMS.include?('subject')
           'subject'
