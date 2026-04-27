@@ -308,7 +308,7 @@ module Delaware
         statement.kind = 'requirements'
         statement.fhirVersion = fhir_version
         statement.format = %w[json]
-        statement.implementationGuide = [base_url]
+        statement.implementationGuide = ["#{base_url}/ImplementationGuide/us-quality-core"]
         statement.rest << rest
 
         @output ||= JSON.pretty_generate(statement)
