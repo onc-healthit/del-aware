@@ -113,7 +113,6 @@ module Delaware
         'Immunization' => { 'vaccine-code' => 'vaccineCode' },
         'ImagingStudy' => { 'procedure-code' => 'procedureReference.code' },
         'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' },
-        'ImmunizationRecommendation' => { 'recommendation-vaccine-code' => 'recommendation.vaccineCode' }
       }.freeze
 
       def self.path_for_search_param(resource_type, search_param)
@@ -144,12 +143,10 @@ module Delaware
         'PractitionerRole' => 'code',
         'ImagingStudy' => 'procedureCode',
         'ImmunizationEvaluation' => 'targetDisease',
-        'ImmunizationRecommendation' => 'recommendationVaccineCode',
         'ServiceRequest' => 'code',
         'Medication' => 'code',
         'MedicationAdministration' => 'medicationCodeableConcept',
         'MedicationStatement' => 'medicationCodeableConcept',
-        'NutritionOrder' => 'type',
         'QuestionnaireResponse' => 'questionnaire',
         'Substance' => 'code',
         'Task' => 'code'
