@@ -155,7 +155,7 @@ module Delaware
 
       def title
         if metadata.present?
-          "#{Config.name} #{profile.type} #{metadata[:code].camelize}"
+          "#{Config.name} #{profile.type} #{metadata[:code]}"
         else
           "#{Config.name} #{profile.type} #{param.titleize}"
         end
