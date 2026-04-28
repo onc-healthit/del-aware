@@ -29,8 +29,17 @@ module Delaware
         ].include?(resource_type)
       end
 
+      def self.exclude_patient_search?(resource_type)
+        %w[
+          ImmunizationRecommendation
+          NutritionOrder
+        ].include?(resource_type)
+      end
+
       def self.patient_search_parameter(resource_type)
-        if FHIR.const_get(resource_type)::SEARCH_PARAMS.include?('patient')
+        if exclude_patient_search?(resource_type)
+          nil
+        elsif FHIR.const_get(resource_type)::SEARCH_PARAMS.include?('patient')
           'patient'
         elsif FHIR.const_get(resource_type)::SEARCH_PARAMS.include?('subject')
           'subject'
@@ -112,8 +121,7 @@ module Delaware
         'Task' => { 'subject' => 'for' },
         'Immunization' => { 'vaccine-code' => 'vaccineCode' },
         'ImagingStudy' => { 'procedure-code' => 'procedureReference.code' },
-        'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' },
-        'ImmunizationRecommendation' => { 'recommendation-vaccine-code' => 'recommendation.vaccineCode' }
+        'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' }
       }.freeze
 
       def self.path_for_search_param(resource_type, search_param)
@@ -144,12 +152,10 @@ module Delaware
         'PractitionerRole' => 'code',
         'ImagingStudy' => 'procedureCode',
         'ImmunizationEvaluation' => 'targetDisease',
-        'ImmunizationRecommendation' => 'recommendationVaccineCode',
         'ServiceRequest' => 'code',
         'Medication' => 'code',
         'MedicationAdministration' => 'medicationCodeableConcept',
         'MedicationStatement' => 'medicationCodeableConcept',
-        'NutritionOrder' => 'type',
         'QuestionnaireResponse' => 'questionnaire',
         'Substance' => 'code',
         'Task' => 'code'
