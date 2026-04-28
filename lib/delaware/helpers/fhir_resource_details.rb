@@ -121,7 +121,7 @@ module Delaware
         'Task' => { 'subject' => 'for' },
         'Immunization' => { 'vaccine-code' => 'vaccineCode' },
         'ImagingStudy' => { 'procedure-code' => 'procedureReference.code' },
-        'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' },
+        'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' }
       }.freeze
 
       def self.path_for_search_param(resource_type, search_param)
