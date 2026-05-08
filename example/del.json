@@ -769,17 +769,20 @@
     "class": "Diagnostic Imaging",
     "name": "Diagnostic Imaging Reference",
     "description": "The technical details of the retrieval access path to indicate network services that can be used to access DICOM studies, series, or instances content and metadata (e.g., a DICOMweb server endpoint providing QIDO-RS, WADO-RS, or WADO-URI).",
-    "bucket": 1,
+    "bucket": 2,
     "mappings": {
       "elements": [
-        "DiagnosticReport.imagingStudy"
+        "DiagnosticReport.imagingStudy",
+        "ImagingStudy.endpoint",
+        "DocumentReference.content.attachment.url"
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy"
         ],
         "us_core_profiles": [
-
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1"
         ]
       },
       "future": {
@@ -854,14 +857,15 @@
     "class": "Encounter Information",
     "name": "Diagnosis Rank",
     "description": "Ordinal number or code that identifies the priority or significance of a diagnosis for a given encounter.",
-    "bucket": 3,
+    "bucket": 1,
     "mappings": {
       "elements": [
-        "Encounter.diagnosis.rank"
+        "Claim.diagnosis",
+        "Claim.diagnosis.sequence"
       ],
       "current": {
         "qi_core_profiles": [
-
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"
         ],
         "us_core_profiles": [
 
@@ -885,11 +889,13 @@
     "mappings": {
       "elements": [
         "Condition.code",
-        "Condition.encounter"
+        "Condition.encounter",
+        "Encounter.diagnosis"
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -909,14 +915,14 @@
     "class": "Encounter Information",
     "name": "Encounter Diagnosis Role",
     "description": "The specific use or role of diagnosis within the context of an encounter e.g., admitting diagnosis, principal diagnosis, discharge diagnosis, etc.",
-    "bucket": 3,
+    "bucket": 1,
     "mappings": {
       "elements": [
-        "Encounter.diagnosis.use"
+        "Condition.code"
       ],
       "current": {
         "qi_core_profiles": [
-
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
         ],
         "us_core_profiles": [
 
@@ -4528,7 +4534,6 @@
       "elements": [
         "Procedure.code",
         "Procedure.partOf",
-        "ServiceRequest.code",
         "Task.code",
         "Task.focus",
         "Task.basedOn",
@@ -4537,9 +4542,7 @@
       "current": {
         "qi_core_profiles": [
           "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure",
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
           "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedurenotdone",
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicenotrequested",
           "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-task",
           "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-taskrejected"
         ],
