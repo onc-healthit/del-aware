@@ -76,7 +76,7 @@ In order to persist changes outside of the Docker image environment, you should 
    Applying the DEL to the IG:
 
    ```sh
-   docker compose run del-aware bin/delaware apply --del=example/del_2026_03_11.json --config=example/config.yaml --ig=ig
+   docker compose run del-aware bin/delaware apply --del=example/del.json --config=example/config.yaml --ig=ig
    ```
 
 3. Shut down the container:
@@ -99,7 +99,7 @@ ruby del2json.rb <path to xlsx> <path to output>
 For example (from repository root):
 
 ```sh
-ruby scripts/del2json.rb ~/Desktop/del_2026_03_11.xlsx example/del_2026_03_11.json
+ruby scripts/del2json.rb ~/Desktop/del.xlsx example/del.json
 ```
 
 ## Testing & Linting
