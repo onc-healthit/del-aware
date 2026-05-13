@@ -10,6 +10,9 @@ module Delaware
       INTERACTION_EXPECTATION = {
         'Organization' => {
           'search-type' => 'MAY'
+        },
+        'Provenance' => {
+          'search-type' => 'MAY'
         }
       }.freeze
 
@@ -33,6 +36,7 @@ module Delaware
         %w[
           ImmunizationRecommendation
           NutritionOrder
+          Provenance
         ].include?(resource_type)
       end
 
@@ -225,12 +229,14 @@ module Delaware
           {
             code: 'patient',
             definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-patient',
-            type: 'reference'
+            type: 'reference',
+            expectation: 'SHALL'
           },
           {
             code: '_id',
             definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-id',
-            type: 'token'
+            type: 'token',
+            expectation: 'SHALL'
           },                    
           {
             code: 'category',
@@ -300,7 +306,7 @@ module Delaware
             code: 'patient',
             definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-patient',
             type: 'reference'
-          },
+          }
         ],
         'ServiceRequest' => [
           {
@@ -326,7 +332,7 @@ module Delaware
 
       def self.search_parameter_metadata(resource_type, exclude_patient: false, param_code: nil)
         metadata =  SEARCH_PARAM_METADATA[resource_type] || [] 
-        metadata.reject! { |p| %w[patient _id].include?(p[:code]) } if exclude_patient
+        metadata = metadata.reject { |p| p[:code] == 'patient' } if exclude_patient
 
         return metadata if param_code.nil?
 

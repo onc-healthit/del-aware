@@ -170,6 +170,7 @@ module Delaware
               if search_parameter_metadata(type).present?
                 params = search_parameter_metadata(type, exclude_patient: true)
                 params.each do |metadata|
+                  next if metadata[:code] == '_id'
                   combo_extension = FHIR::R4::Extension.new({
                                                               url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination'
                                                             })
@@ -242,7 +243,7 @@ module Delaware
               param = FHIR::R4::CapabilityStatement::Rest::Resource::SearchParam.new
               conformance = metadata[:expectation].presence || 'MAY'
               param.name = metadata[:code]
-              param.definition = search_param_url(type, param.name, metadata: metadata)
+              param.definition = search_param_url(type, param.name, metadata)
               param.type = search_parameter_type(type, metadata)
               param.documentation = "The client **#{conformance}** provide a #{param.type} value."
               param.extension << FHIR::R4::Extension.new({
@@ -383,7 +384,7 @@ module Delaware
         data_element_list.by_resource
       end
 
-      def search_param_url(resource, param, metadata: nil)
+      def search_param_url(resource, param, metadata = nil)
         definition = metadata&.dig(:definition)
         return definition if definition.present?
 
