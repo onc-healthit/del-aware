@@ -138,7 +138,7 @@ module Delaware
             link: "StructureDefinition-#{profile.id}.html"
           }
         end
-        results
+        sort_profile_list(results)
       end
 
       def out_of_scope_profile_urls
@@ -155,7 +155,11 @@ module Delaware
             link: "StructureDefinition-#{profile.id}.html"
           }
         end
-        results
+        sort_profile_list(results)
+      end
+
+      def sort_profile_list(profile_list)
+        profile_list.sort_by { |profile| [profile[:title].to_s.downcase, profile[:title].to_s, profile[:link].to_s] }
       end
 
       def generate
