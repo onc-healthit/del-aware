@@ -105,8 +105,6 @@ module Delaware
 
         return "#{base}.subject.where(resolve() is Patient)" if param == 'subject'
 
-        return "#{base}.procedureReference.resolve().code" if param == 'procedure-code'
-
         return 'Resource.id' if param == '_id'
 
         path = Delaware::Helpers::FhirResourceDetails.path_for_search_param(profile.type, param)

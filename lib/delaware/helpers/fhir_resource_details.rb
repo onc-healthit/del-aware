@@ -120,7 +120,7 @@ module Delaware
         'Procedure' => { 'patient' => 'subject' },
         'Task' => { 'subject' => 'for' },
         'Immunization' => { 'vaccine-code' => 'vaccineCode' },
-        'ImagingStudy' => { 'procedure-code' => 'procedureReference.code' },
+        'ImagingStudy' => { 'procedure-code' => 'procedureCode' },
         'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' }
       }.freeze
 
