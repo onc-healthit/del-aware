@@ -46,6 +46,13 @@ module Delaware
         end
       end
 
+      def self.us_core_profile?(resource_type)
+        %w[
+          DocumentReference
+          Specimen
+        ].include?(resource_type)
+      end
+
       # NOTE: may return the wrong value if
       # - the primary code path is not `code`, there is a `code` search parameter that doesn't point to it, or
       # - the dasherized naming convention doesn't hold
@@ -137,21 +144,21 @@ module Delaware
         'AdverseEvent' => 'event',
         'CarePlan' => 'category',
         'CareTeam' => 'status',
-        'Claim' => 'type',
-        'ClaimResponse' => 'type',
-        'Communication' => 'topic',
-        'CommunicationRequest' => 'category',
+        'Claim' => 'type', # excluded by suppress_code_search?
+        'ClaimResponse' => 'type', 
+        'Communication' => 'topic', 
+        'CommunicationRequest' => 'category', 
         'Condition' => 'code',
-        'Device' => 'type',
+        'Device' => 'type', 
         'DeviceRequest' => 'codeCodeableConcept',
         'DeviceUseStatement' => 'deviceType',
         'Observation' => 'code',
         'DiagnosticReport' => 'code',
         'Encounter' => 'type',
-        'Flag' => 'code',
-        'PractitionerRole' => 'code',
+        'Flag' => 'code', 
+        'PractitionerRole' => 'code', # excluded by suppress_code_search?
         'ImagingStudy' => 'procedureCode',
-        'ImmunizationEvaluation' => 'targetDisease',
+        'ImmunizationEvaluation' => 'targetDisease', 
         'ServiceRequest' => 'code',
         'Medication' => 'code',
         'MedicationAdministration' => 'medicationCodeableConcept',
@@ -199,20 +206,6 @@ module Delaware
             comparator: DEFAULT_COMPARATORS
           }
         ],
-        'Condition' => [
-          {
-            code: 'onset-date',
-            type: 'date',
-            expression: 'Condition.onset.as(dateTime)|Condition.onset.as(Period)',
-            comparator: DEFAULT_COMPARATORS
-          },
-          {
-            code: 'abatement-date',
-            type: 'date',
-            expression: 'Condition.abatement.as(dateTime)|Condition.abatement.as(Period)',
-            comparator: DEFAULT_COMPARATORS
-          }
-        ],
         'DiagnosticReport' => [
           {
             code: 'date',
@@ -228,18 +221,37 @@ module Delaware
             expression: "DeviceRequest.modifierExtension.where(url='http://hl7.org/fhir/5.0/StructureDefinition/extension-DeviceRequest.doNotPerform').value"
           }
         ],
+        'DocumentReference' => [
+          {
+            code: 'patient',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-patient',
+            type: 'reference'
+          },
+          {
+            code: '_id',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-id',
+            type: 'token'
+          },                    
+          {
+            code: 'category',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-category',
+            type: 'token'
+          },
+          {
+            code: 'date',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-date',
+            type: 'date'
+          },
+          {
+            code: 'type',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-type',
+            type: 'token'
+          },
+        ],
         'Encounter' => [
           {
             code: 'date',
             expression: 'Encounter.period',
-            comparator: DEFAULT_COMPARATORS
-          }
-        ],
-        'Immunization' => [
-          {
-            code: 'date',
-            type: 'date',
-            expression: 'Immunization.occurrence',
             comparator: DEFAULT_COMPARATORS
           }
         ],
@@ -277,6 +289,19 @@ module Delaware
             comparator: DEFAULT_COMPARATORS
           }
         ],
+        'Specimen' => [
+          {
+            code: '_id',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-id',
+            type: 'token',
+            expectation: 'SHALL'
+          },
+          {
+            code: 'patient',
+            definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-specimen-patient',
+            type: 'reference'
+          },
+        ],
         'ServiceRequest' => [
           {
             code: 'authored',
@@ -293,13 +318,20 @@ module Delaware
           {
             code: 'patient',
             type: 'reference',
-            expression: 'Task.for.where(resolve() is Patient)'
+            expression: 'Task.for.where(resolve() is Patient)',
+            expectation: 'SHALL'
           }
         ]
       }.freeze
 
-      def self.search_parameter_metadata(resource_type)
-        SEARCH_PARAM_METADATA[resource_type] || []
+      def self.search_parameter_metadata(resource_type, exclude_patient: false, param_code: nil)
+        metadata =  SEARCH_PARAM_METADATA[resource_type] || [] 
+        metadata.reject! { |p| %w[patient _id].include?(p[:code]) } if exclude_patient
+
+        return metadata if param_code.nil?
+
+        metadata = metadata.find { |x| x[:code] == param_code }
+        metadata.present? ? [metadata] : []
       end
 
       def self.search_parameter_type(resource_type, metadata)
@@ -339,24 +371,6 @@ module Delaware
       end
 
       SEARCH_PARAM_COMBINATION = {
-        'Condition' => [
-          {
-            code: %w[patient abatement-date],
-            expectation: 'SHOULD'
-          },
-          {
-            code: %w[patient category],
-            expectation: 'SHALL'
-          },
-          {
-            code: %w[patient code],
-            expectation: 'SHOULD'
-          },
-          {
-            code: %w[patient onset-date],
-            expectation: 'SHOULD'
-          }
-        ],
         'DeviceRequest' => [
           {
             code: %w[patient code],
@@ -381,13 +395,17 @@ module Delaware
             expectation: 'SHALL'
           }
         ],
-        'Immunization' => [
+        'DocumentReference' => [
           {
-            code: %w[patient date],
-            expectation: 'SHOULD'
+            code: %w[patient type],
+            expectation: 'SHALL'
           },
           {
-            code: %w[patient status],
+            code: %w[patient category],
+            expectation: 'SHALL'
+          },
+          {
+            code: %w[patient category date],
             expectation: 'SHALL'
           }
         ],

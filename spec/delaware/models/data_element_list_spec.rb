@@ -75,4 +75,92 @@ RSpec.describe Delaware::Models::DataElementList do
       expect(json.last['name']).to eq(data_element_list.data_elements.last.name)
     end
   end
+
+  describe '#supported_profiles_by_resource' do
+    let(:config) { Delaware::Config.from_file('example/config.yaml') }
+    let(:json) do
+      JSON.generate(
+        [
+          {
+            class: 'Clinical Notes',
+            name: 'Procedure Note',
+            mappings: {
+              current: {
+                qi_core_profiles: [
+                  'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note'
+                ],
+                us_core_profiles: [
+                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1'
+                ]
+              },
+              future: {
+                qi_core_profiles: [],
+                us_core_profiles: []
+              },
+              elements: [
+                'DocumentReference.type',
+                'DiagnosticReport.category'
+              ]
+            }
+          },
+          {
+            class: 'Health Status Assessments',
+            name: 'Pregnancy Status',
+            mappings: {
+              current: {
+                qi_core_profiles: [],
+                us_core_profiles: [
+                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1',
+                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1'
+                ]
+              },
+              future: {
+                qi_core_profiles: [],
+                us_core_profiles: []
+              },
+              elements: [
+                'Observation.category',
+                'Observation.code'
+              ]
+            }
+          }
+        ]
+      )
+    end
+    let(:profiles) do
+      {
+        DiagnosticReportNote: FHIR::R4::StructureDefinition.new({
+                                                                  id: 'us-quality-core-diagnosticreport-note',
+                                                                  type: 'DiagnosticReport',
+                                                                  url: 'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note'
+                                                                })
+      }
+    end
+
+    it 'includes current US Core profiles only when current QI-Core profiles are absent' do
+      config
+
+      data_element_list = described_class.from_json(json, profiles)
+
+      expect(data_element_list.supported_profiles_by_resource).to eq(
+        {
+          'DiagnosticReport' => {
+            'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note' => [
+              'DiagnosticReport.category'
+            ]
+          },
+          'Observation' => {
+            'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1' => [
+              'Observation.category',
+              'Observation.code'
+            ],
+            'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1' => [
+              'Observation.category',
+              'Observation.code'
+            ]
+          }
+        }
+      )
+    end
+  end
 end

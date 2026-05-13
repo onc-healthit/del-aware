@@ -21,16 +21,15 @@ module Delaware
       def output
         # Supported Resources
         resources = []
-        data_element_list.by_resource.each_key do |type|
+        supported_profiles_by_resource = data_element_list.supported_profiles_by_resource
+        supported_profiles_by_resource.each_key do |type|
           resource = FHIR::R4::CapabilityStatement::Rest::Resource.new
           resource.extension << FHIR::R4::Extension.new({
                                                           url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
                                                           valueCode: 'SHALL'
                                                         })
           resource.type = type
-          resource.supportedProfile = data_element_list.by_resource[type].keys.map do |profile|
-            "#{base_url}/StructureDefinition/#{profile}"
-          end
+          resource.supportedProfile = supported_profiles_by_resource[type].keys
           resource.referencePolicy = ['resolves']
 
           # Interactions
@@ -72,13 +71,18 @@ module Delaware
           if patient_search_parameter(type).present?
             param = FHIR::R4::CapabilityStatement::Rest::Resource::SearchParam.new
             param.name = patient_search_parameter(type)
-            param.definition = search_param_url(type, patient_search_parameter(type))
+            metadata = search_parameter_metadata(type, param_code: param.name).first
+            param.definition = search_param_url(type, patient_search_parameter(type), metadata)        
             param.type = 'reference'
             param.documentation = 'The client **SHALL** provide an id value for the reference.'
-
+            if metadata.present?
+              conformance = metadata[:expectation].presence || 'MAY'
+            else 
+              conformance = patient_search_expectation(type)
+            end
             param.extension << FHIR::R4::Extension.new({
                                                          url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
-                                                         valueCode: patient_search_expectation(type)
+                                                         valueCode: conformance
                                                        })
 
             search_params << param
@@ -236,8 +240,9 @@ module Delaware
             params = search_parameter_metadata(type, exclude_patient: true)
             params.each do |metadata|
               param = FHIR::R4::CapabilityStatement::Rest::Resource::SearchParam.new
+              conformance = metadata[:expectation].presence || 'MAY'
               param.name = metadata[:code]
-              param.definition = search_param_url(type, param.name)
+              param.definition = search_param_url(type, param.name, metadata: metadata)
               param.type = search_parameter_type(type, metadata)
               param.documentation = "The client **#{conformance}** provide a #{param.type} value."
               param.extension << FHIR::R4::Extension.new({
@@ -378,7 +383,10 @@ module Delaware
         data_element_list.by_resource
       end
 
-      def search_param_url(resource, param)
+      def search_param_url(resource, param, metadata: nil)
+        definition = metadata&.dig(:definition)
+        return definition if definition.present?
+
         "#{base_url}/SearchParameter/#{Config.ig_id}-#{resource.downcase}-#{param.gsub('_', '')}"
       end
 
@@ -409,9 +417,8 @@ module Delaware
         Delaware::Helpers::FhirResourceDetails.pcp_element_search_parameter(resource, primary_code_path)
       end
 
-      def search_parameter_metadata(resource, exclude_patient: false)
-        params = Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource)
-        exclude_patient ? params.reject { |p| p[:code] == 'patient' } : params
+      def search_parameter_metadata(resource, exclude_patient: false, param_code: nil)
+        params = Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource, exclude_patient: exclude_patient, param_code: param_code)
       end
 
       def search_parameter_combination(resource)
@@ -432,6 +439,7 @@ module Delaware
         # Create supporting SearchParameters
         profiles.each_value do |profile|
           resource = profile.type
+          next if Delaware::Helpers::FhirResourceDetails.us_core_profile?(resource)
           patient_param = patient_search_parameter(resource)
           code_param = code_search_parameter(resource)
           search_param_metadata = search_parameter_metadata(resource)
