@@ -30,4 +30,38 @@ RSpec.describe Delaware::Models::Profile do
       expect(profile.tagged_elements('bogus').count).to eq(0)
     end
   end
+
+  describe '#parent' do
+    before { Delaware::Config.from_file('example/config.yaml') }
+
+    it 'does not duplicate an existing US Core version in the base definition' do
+      profile = build(:profile)
+      profile.baseDefinition = 'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0'
+
+      allow(described_class).to receive(:resolve)
+
+      profile.parent({})
+
+      expect(described_class).to have_received(:resolve).with(
+        'http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|6.1.0',
+        {},
+        nil
+      )
+    end
+
+    it 'does not duplicate an existing FHIR version in the base definition' do
+      profile = build(:profile)
+      profile.baseDefinition = 'http://hl7.org/fhir/StructureDefinition/Observation|4.0.1'
+
+      allow(described_class).to receive(:resolve)
+
+      profile.parent({})
+
+      expect(described_class).to have_received(:resolve).with(
+        'http://hl7.org/fhir/StructureDefinition/Observation|4.0.1',
+        {},
+        nil
+      )
+    end
+  end
 end

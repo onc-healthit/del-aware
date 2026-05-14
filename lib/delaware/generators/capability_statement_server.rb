@@ -19,19 +19,31 @@ module Delaware
       end
 
       def output
+        @output ||= JSON.pretty_generate(capability_statement_hash)
+      end
+
+      def capability_statement_hash
+        statement_hash = capability_statement.to_hash
+        # fhir_models exposes searchRevInclude but not the sibling primitive extension
+        # field _searchRevInclude, so add the expectation extension after model serialization.
+        add_search_revinclude_expectation_extensions(statement_hash)
+        statement_hash
+      end
+
+      def capability_statement
         # Supported Resources
         resources = []
-        data_element_list.by_resource.each_key do |type|
+        supported_profiles_by_resource = data_element_list.supported_profiles_by_resource
+        supported_profiles_by_resource.each_key do |type|
           resource = FHIR::R4::CapabilityStatement::Rest::Resource.new
           resource.extension << FHIR::R4::Extension.new({
                                                           url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
                                                           valueCode: 'SHALL'
                                                         })
           resource.type = type
-          resource.supportedProfile = data_element_list.by_resource[type].keys.map do |profile|
-            "#{base_url}/StructureDefinition/#{profile}"
-          end
+          resource.supportedProfile = supported_profiles_by_resource[type].keys
           resource.referencePolicy = ['resolves']
+          resource.searchRevInclude = ['Provenance:target'] if provenance_revinclude?(type)
 
           # Interactions
 
@@ -72,13 +84,18 @@ module Delaware
           if patient_search_parameter(type).present?
             param = FHIR::R4::CapabilityStatement::Rest::Resource::SearchParam.new
             param.name = patient_search_parameter(type)
-            param.definition = search_param_url(type, patient_search_parameter(type))
+            metadata = search_parameter_metadata(type, param_code: param.name).first
+            param.definition = search_param_url(type, patient_search_parameter(type), metadata)
             param.type = 'reference'
             param.documentation = 'The client **SHALL** provide an id value for the reference.'
-
+            conformance = if metadata.present?
+                            metadata[:expectation].presence || 'MAY'
+                          else
+                            patient_search_expectation(type)
+                          end
             param.extension << FHIR::R4::Extension.new({
                                                          url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
-                                                         valueCode: patient_search_expectation(type)
+                                                         valueCode: conformance
                                                        })
 
             search_params << param
@@ -166,6 +183,8 @@ module Delaware
               if search_parameter_metadata(type).present?
                 params = search_parameter_metadata(type, exclude_patient: true)
                 params.each do |metadata|
+                  next if metadata[:code] == '_id'
+
                   combo_extension = FHIR::R4::Extension.new({
                                                               url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-search-parameter-combination'
                                                             })
@@ -236,8 +255,9 @@ module Delaware
             params = search_parameter_metadata(type, exclude_patient: true)
             params.each do |metadata|
               param = FHIR::R4::CapabilityStatement::Rest::Resource::SearchParam.new
+              conformance = metadata[:expectation].presence || 'MAY'
               param.name = metadata[:code]
-              param.definition = search_param_url(type, param.name)
+              param.definition = search_param_url(type, param.name, metadata)
               param.type = search_parameter_type(type, metadata)
               param.documentation = "The client **#{conformance}** provide a #{param.type} value."
               param.extension << FHIR::R4::Extension.new({
@@ -311,7 +331,7 @@ module Delaware
         statement.implementationGuide = ["#{base_url}/ImplementationGuide/us-quality-core"]
         statement.rest << rest
 
-        @output ||= JSON.pretty_generate(statement)
+        statement
       end
 
       def base_output_file_name
@@ -378,7 +398,10 @@ module Delaware
         data_element_list.by_resource
       end
 
-      def search_param_url(resource, param)
+      def search_param_url(resource, param, metadata = nil)
+        definition = metadata&.dig(:definition)
+        return definition if definition.present?
+
         "#{base_url}/SearchParameter/#{Config.ig_id}-#{resource.downcase}-#{param.gsub('_', '')}"
       end
 
@@ -409,9 +432,8 @@ module Delaware
         Delaware::Helpers::FhirResourceDetails.pcp_element_search_parameter(resource, primary_code_path)
       end
 
-      def search_parameter_metadata(resource, exclude_patient: false)
-        params = Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource)
-        exclude_patient ? params.reject { |p| p[:code] == 'patient' } : params
+      def search_parameter_metadata(resource, exclude_patient: false, param_code: nil)
+        Delaware::Helpers::FhirResourceDetails.search_parameter_metadata(resource, exclude_patient: exclude_patient, param_code: param_code)
       end
 
       def search_parameter_combination(resource)
@@ -426,12 +448,43 @@ module Delaware
         Delaware::Helpers::FhirResourceDetails.interaction_expectation(resource_type, interaction_code)
       end
 
+      def provenance_revinclude?(resource_type)
+        Delaware::Helpers::FhirResourceDetails.provenance_revinclude?(resource_type)
+      end
+
+      def add_search_revinclude_expectation_extensions(statement_hash)
+        statement_hash.dig('rest', 0, 'resource')&.each do |resource|
+          next if resource['searchRevInclude'].blank?
+
+          resource.replace(
+            resource.each_with_object({}) do |(key, value), hash|
+              hash[key] = value
+
+              next unless key == 'searchRevInclude'
+
+              hash['_searchRevInclude'] = value.map do
+                {
+                  'extension' => [
+                    {
+                      'url' => 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
+                      'valueCode' => 'SHALL'
+                    }
+                  ]
+                }
+              end
+            end
+          )
+        end
+      end
+
       def generate
         FileUtils.mkdir_p(output_file_directory)
 
         # Create supporting SearchParameters
         profiles.each_value do |profile|
           resource = profile.type
+          next if Delaware::Helpers::FhirResourceDetails.us_core_profile?(resource)
+
           patient_param = patient_search_parameter(resource)
           code_param = code_search_parameter(resource)
           search_param_metadata = search_parameter_metadata(resource)
@@ -449,7 +502,7 @@ module Delaware
           end
         end
 
-        File.write(output_file_name, output)
+        File.write(output_file_name, "#{output}\n")
       end
     end
   end

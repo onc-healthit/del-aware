@@ -68,6 +68,59 @@ module Delaware
         end
         resources
       end
+
+      # Returns CapabilityStatement supported profiles organized by FHIR resource.
+      # Profile keys are full canonical URLs because supportedProfile may point to
+      # profiles outside the generated IG, such as US Core profiles.
+      def supported_profiles_by_resource
+        resources = {}
+        data_elements.each do |data_element|
+          if data_element.supported_profiles.present?
+            merge_supported_profiles(resources, data_element.supported_profiles)
+          else
+            merge_local_data_requirements(resources, data_element.data_requirements)
+          end
+        end
+        resources
+      end
+
+      private
+
+      def merge_supported_profiles(resources, supported_profiles)
+        supported_profiles.each do |resource, profiles|
+          profiles.each do |profile_url, requirements|
+            requirements.each do |requirement|
+              add_profile_requirement(resources, resource, profile_url, requirement)
+            end
+          end
+        end
+      end
+
+      def merge_local_data_requirements(resources, data_requirements)
+        data_requirements.each do |data_requirement|
+          if data_requirement.resource.blank? ||
+             data_requirement.id.blank? ||
+             data_requirement.ig_profile_id.blank?
+            next
+          end
+
+          add_profile_requirement(
+            resources,
+            data_requirement.resource,
+            "#{Config.base_url}/StructureDefinition/#{data_requirement.ig_profile_id}",
+            data_requirement.id
+          )
+        end
+      end
+
+      def add_profile_requirement(resources, resource, profile_url, requirement)
+        return if resource.blank? || profile_url.blank? || requirement.blank?
+
+        resources[resource] ||= {}
+        resources[resource][profile_url] ||= []
+        resources[resource][profile_url] << requirement
+        resources[resource][profile_url].uniq!
+      end
     end
   end
 end

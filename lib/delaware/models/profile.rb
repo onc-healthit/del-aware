@@ -47,7 +47,7 @@ module Delaware
       end
 
       def self.versioned_url(url, ending = '')
-        url.gsub!('|', '%7C')
+        url = url.gsub('|', '%7C')
         if url.include?('%7C')
           version = url.split('%7C').last
           version = version.gsub(/.0$/, '') if version.ends_with?('.0')
@@ -136,9 +136,9 @@ module Delaware
 
       def parent(profiles = {}, working_dir = nil)
         target = if baseDefinition.include?('us/core')
-                   baseDefinition + "|#{Config.us_core_version}"
+                   canonical_with_version(baseDefinition, Config.us_core_version)
                  elsif baseDefinition.include?('http://hl7.org/fhir/StructureDefinition')
-                   baseDefinition + "|#{Config.fhir_version}"
+                   canonical_with_version(baseDefinition, Config.fhir_version)
                  else
                    baseDefinition
                  end
@@ -203,6 +203,11 @@ module Delaware
       end
 
       private
+
+      def canonical_with_version(url, version)
+        base, = url.split('|', 2)
+        "#{base}|#{version}"
+      end
 
       # Collect all base definition profiles (starting with the one provided), up to and
       # including one from US Core.
