@@ -90,7 +90,7 @@ RSpec.describe Delaware::Models::DataElementList do
                   'http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note'
                 ],
                 us_core_profiles: [
-                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1'
+                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0'
                 ]
               },
               future: {
@@ -110,8 +110,8 @@ RSpec.describe Delaware::Models::DataElementList do
               current: {
                 qi_core_profiles: [],
                 us_core_profiles: [
-                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1',
-                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1'
+                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1.0',
+                  'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1.0'
                 ]
               },
               future: {
@@ -150,11 +150,11 @@ RSpec.describe Delaware::Models::DataElementList do
             ]
           },
           'Observation' => {
-            'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1' => [
+            'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancyintent|6.1.0' => [
               'Observation.category',
               'Observation.code'
             ],
-            'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1' => [
+            'http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-pregnancystatus|6.1.0' => [
               'Observation.category',
               'Observation.code'
             ]

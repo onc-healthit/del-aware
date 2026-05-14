@@ -75,12 +75,21 @@ module Delaware
         %w[
           Encounter
           Patient
-          Practitioner
-          Location
-          PractitionerRole
           QuestionnaireResponse
           RelatedPerson
           ServiceRequest
+        ].include?(resource_type)
+      end
+
+      def self.provenance_revinclude?(resource_type)
+        !%w[
+          Location
+          Medication
+          Organization
+          Practitioner
+          PractitionerRole
+          Provenance
+          Specimen
         ].include?(resource_type)
       end
 

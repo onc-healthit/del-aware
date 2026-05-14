@@ -19,6 +19,18 @@ module Delaware
       end
 
       def output
+        @output ||= JSON.pretty_generate(capability_statement_hash)
+      end
+
+      def capability_statement_hash
+        statement_hash = capability_statement.to_hash
+        # fhir_models exposes searchRevInclude but not the sibling primitive extension
+        # field _searchRevInclude, so add the expectation extension after model serialization.
+        add_search_revinclude_expectation_extensions(statement_hash)
+        statement_hash
+      end
+
+      def capability_statement
         # Supported Resources
         resources = []
         supported_profiles_by_resource = data_element_list.supported_profiles_by_resource
@@ -31,6 +43,7 @@ module Delaware
           resource.type = type
           resource.supportedProfile = supported_profiles_by_resource[type].keys
           resource.referencePolicy = ['resolves']
+          resource.searchRevInclude = ['Provenance:target'] if provenance_revinclude?(type)
 
           # Interactions
 
@@ -318,7 +331,7 @@ module Delaware
         statement.implementationGuide = ["#{base_url}/ImplementationGuide/us-quality-core"]
         statement.rest << rest
 
-        @output ||= JSON.pretty_generate(statement)
+        statement
       end
 
       def base_output_file_name
@@ -435,6 +448,35 @@ module Delaware
         Delaware::Helpers::FhirResourceDetails.interaction_expectation(resource_type, interaction_code)
       end
 
+      def provenance_revinclude?(resource_type)
+        Delaware::Helpers::FhirResourceDetails.provenance_revinclude?(resource_type)
+      end
+
+      def add_search_revinclude_expectation_extensions(statement_hash)
+        statement_hash.dig('rest', 0, 'resource')&.each do |resource|
+          next if resource['searchRevInclude'].blank?
+
+          resource.replace(
+            resource.each_with_object({}) do |(key, value), hash|
+              hash[key] = value
+
+              next unless key == 'searchRevInclude'
+
+              hash['_searchRevInclude'] = value.map do
+                {
+                  'extension' => [
+                    {
+                      'url' => 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
+                      'valueCode' => 'SHALL'
+                    }
+                  ]
+                }
+              end
+            end
+          )
+        end
+      end
+
       def generate
         FileUtils.mkdir_p(output_file_directory)
 
@@ -460,7 +502,7 @@ module Delaware
           end
         end
 
-        File.write(output_file_name, output)
+        File.write(output_file_name, "#{output}\n")
       end
     end
   end
