@@ -149,20 +149,20 @@ module Delaware
         'CarePlan' => 'category',
         'CareTeam' => 'status',
         'Claim' => 'type', # excluded by suppress_code_search?
-        'ClaimResponse' => 'type', 
-        'Communication' => 'topic', 
-        'CommunicationRequest' => 'category', 
+        'ClaimResponse' => 'type',
+        'Communication' => 'topic',
+        'CommunicationRequest' => 'category',
         'Condition' => 'code',
-        'Device' => 'type', 
+        'Device' => 'type',
         'DeviceRequest' => 'codeCodeableConcept',
         'DeviceUseStatement' => 'deviceType',
         'Observation' => 'code',
         'DiagnosticReport' => 'code',
         'Encounter' => 'type',
-        'Flag' => 'code', 
+        'Flag' => 'code',
         'PractitionerRole' => 'code', # excluded by suppress_code_search?
         'ImagingStudy' => 'procedureCode',
-        'ImmunizationEvaluation' => 'targetDisease', 
+        'ImmunizationEvaluation' => 'targetDisease',
         'ServiceRequest' => 'code',
         'Medication' => 'code',
         'MedicationAdministration' => 'medicationCodeableConcept',
@@ -237,7 +237,7 @@ module Delaware
             definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-id',
             type: 'token',
             expectation: 'SHALL'
-          },                    
+          },
           {
             code: 'category',
             definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-category',
@@ -252,7 +252,7 @@ module Delaware
             code: 'type',
             definition: 'http://hl7.org/fhir/us/core/SearchParameter/us-core-documentreference-type',
             type: 'token'
-          },
+          }
         ],
         'Encounter' => [
           {
@@ -331,7 +331,7 @@ module Delaware
       }.freeze
 
       def self.search_parameter_metadata(resource_type, exclude_patient: false, param_code: nil)
-        metadata =  SEARCH_PARAM_METADATA[resource_type] || [] 
+        metadata = SEARCH_PARAM_METADATA[resource_type] || []
         metadata = metadata.reject { |p| p[:code] == 'patient' } if exclude_patient
 
         return metadata if param_code.nil?
