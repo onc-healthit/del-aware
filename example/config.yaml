@@ -17,10 +17,10 @@ us_core_version: 6.1.0
 stu_version: 6
 
 # IG output version
-version: 0.1.0
+version: 0.5.0
 
 # Date of version "release"
-date: 2026-03-31
+date: 2026-05-15
 
 # Required data element tag
 tag: USCDI+ Quality
