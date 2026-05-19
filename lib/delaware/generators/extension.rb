@@ -46,7 +46,15 @@ module Delaware
       end
 
       def date
-        DateTime.now.to_s
+        Config.date
+      end
+
+      def publisher
+        Config.publisher
+      end
+
+      def contact
+        Config.contact
       end
 
       def base_url

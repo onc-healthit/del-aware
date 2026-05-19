@@ -22,6 +22,12 @@ version: 0.5.0
 # Date of version "release"
 date: 2026-05-15
 
+# Name of publisher
+publisher: Office of the National Coordinator for Health Information Technology (ONC)
+
+# URL for publisher contact
+contact: https://www.healthit.gov/feedback
+
 # Required data element tag
 tag: USCDI+ Quality
 

@@ -323,6 +323,14 @@ module Delaware
         statement.title = title
         statement.status = 'active'
         statement.experimental = false
+        statement.publisher = publisher
+        pub_contact = FHIR::R4::ContactDetail.new
+        pub_contact.name = publisher
+        pub_telecom = FHIR::R4::ContactPoint.new
+        pub_telecom.system = 'url'
+        pub_telecom.value = contact
+        pub_contact.telecom << pub_telecom
+        statement.contact << pub_contact
         statement.date = date
         statement.description = description
         statement.kind = 'requirements'
@@ -352,6 +360,14 @@ module Delaware
 
       def version
         Config.version
+      end
+
+      def publisher
+        Config.publisher
+      end
+
+      def contact
+        Config.contact
       end
 
       def fhir_version

@@ -23,6 +23,8 @@ module Delaware
       cqf_tooling_binary
       stu_version
       content
+      publisher
+      contact
     ].freeze
 
     attr_reader(*ATTRIBUTES)

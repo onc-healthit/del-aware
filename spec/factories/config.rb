@@ -16,5 +16,7 @@ FactoryBot.define do
     cqf_tooling_binary { 'https://search.maven.org/remotecontent?filepath=org/opencds/cqf/tooling-cli/3.6.0/tooling-cli-3.6.0.jar' }
     initialize_with { new(**attributes) }
     content { 'example/content' }
+    contact { 'example.com' }
+    publisher { 'ACME' }
   end
 end

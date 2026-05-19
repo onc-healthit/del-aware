@@ -38,6 +38,15 @@ module Delaware
         search_param.multipleOr = true
         search_param.multipleAnd = true
 
+        search_param.publisher = publisher
+        pub_contact = FHIR::R4::ContactDetail.new
+        pub_contact.name = publisher
+        pub_telecom = FHIR::R4::ContactPoint.new
+        pub_telecom.system = 'url'
+        pub_telecom.value = contact
+        pub_contact.telecom << pub_telecom
+        search_param.contact << pub_contact
+
         if metadata&.key?(:comparator)
           comparator_result = comparator_with_extension(metadata)
           search_param.comparator = comparator_result[:comparators]
@@ -81,6 +90,14 @@ module Delaware
 
       def base_url
         Config.base_url
+      end
+
+      def publisher
+        Config.publisher
+      end
+
+      def contact
+        Config.contact
       end
 
       def type
