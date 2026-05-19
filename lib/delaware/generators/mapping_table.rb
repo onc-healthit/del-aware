@@ -81,9 +81,12 @@ module Delaware
           us_core_profile_urls.each do |url|
             profile = Delaware::Models::Profile.resolve(url)
 
+            link = Delaware::Models::Profile.versioned_url(url, '.html').gsub('.json', '')
+            link.gsub!('STU9.0.0-ballot', '2026Jan') # Temp fix for ballot 9 us core
+
             profile = {
               title: "#{profile.title} (#{profile.version})", # Include version in label
-              link: Delaware::Models::Profile.versioned_url(url, '.html').gsub('.json', '')
+              link: link
             }
 
             us_core_profiles << profile
