@@ -51,9 +51,7 @@ module Delaware
         if url.include?('%7C')
           version = url.split('%7C').last
           version = version.gsub(/.0$/, '') if version.ends_with?('.0')
-          url.gsub('/StructureDefinition/', "/STU#{version}/StructureDefinition-").gsub(/%7C.*/, ending)
-        else
-          url
+          url = url.gsub('/StructureDefinition/', "/STU#{version}/StructureDefinition-").gsub(/%7C.*/, ending)
         end
         url.gsub('http://', 'https://')
       end
