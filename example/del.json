@@ -108,7 +108,7 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-adverseevent|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -297,7 +297,7 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-allergyintolerance|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -1178,7 +1178,7 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-location|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -1739,9 +1739,9 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -1957,9 +1957,9 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -2095,9 +2095,9 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-simple-observation|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-condition-problems-health-concerns|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -2316,7 +2316,7 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-lab|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-lab|7.0.2"
         ],
         "us_core_profiles": [
 
@@ -4419,11 +4419,11 @@
       },
       "future": {
         "qi_core_profiles": [
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone|7.0.1",
-          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone|7.0.1"
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedure|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunization|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-diagnosticreport-note|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-procedurenotdone|7.0.2",
+          "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-immunizationnotdone|7.0.2"
         ],
         "us_core_profiles": [
 

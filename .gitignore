@@ -2,8 +2,6 @@
 .byebug_history
 .vscode/*
 .rspec_status
-cache/*
-!cache/*.json
 output/*
 !output/.keep
 inferno/*
