@@ -336,7 +336,7 @@ module Delaware
         statement.kind = 'requirements'
         statement.fhirVersion = fhir_version
         statement.format = %w[json]
-        statement.implementationGuide = ["#{base_url}/ImplementationGuide/us-quality-core"]
+        statement.implementationGuide = ["#{base_url}/ImplementationGuide/fhir.onc.us.quality-core"]
         statement.rest << rest
 
         statement
