@@ -55,6 +55,7 @@ module Delaware
         else
           url
         end
+        url.gsub('http://', 'https://')
       end
 
       # Initialize from a copy in the local cache.
