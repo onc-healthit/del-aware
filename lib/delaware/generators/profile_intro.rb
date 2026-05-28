@@ -90,7 +90,7 @@ module Delaware
 
           {
             target: target,
-            short: element.short&.gsub('|', '\|')
+            short: element.short
           }
         end
         .compact
