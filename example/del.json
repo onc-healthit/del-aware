@@ -858,14 +858,14 @@
     "name": "Diagnosis Rank",
     "description": "Ordinal number or code that identifies the priority or significance of a diagnosis for a given encounter.",
     "bucket": 1,
+    "footnote": "In QI-Core 6.0.0, information about principal diagnosis is represented using the Claim profile. In US Quality Core v0.5.0, support for the Claim profile is not required for conformance. Implementers may determine the appropriate implementation approach to support this USCDI+ Quality data element. We encourage the quality community to provide additional input on information needed to support quality measurement use cases through the HL7 ballot process for US Quality Core.",
     "mappings": {
       "elements": [
-        "Claim.diagnosis",
-        "Claim.diagnosis.sequence"
+
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"
+
         ],
         "us_core_profiles": [
 
@@ -1111,12 +1111,11 @@
     "bucket": 1,
     "mappings": {
       "elements": [
-        "Claim.diagnosis.onAdmission",
-        "Claim.diagnosis.diagnosis[x]"
+        "Encounter.diagnosis.extension:diagnosisPresentOnAdmission"
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -4530,6 +4529,7 @@
     "name": "Procedures",
     "description": "Activity performed for or on a patient as part of the provision of care.",
     "bucket": 1,
+    "footnote": "In QI-Core 6.0.0, information about principal procedure is represented using the Claim profile. In US Quality Core v0.5.0, support for the Claim profile is not required for conformance. Implementers may determine the appropriate implementation approach to support this USCDI+ Quality data element. We encourage the quality community to provide additional input on information needed to support quality measurement use cases through the HL7 ballot process for US Quality Core.",
     "mappings": {
       "elements": [
         "Procedure.code",
