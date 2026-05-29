@@ -102,7 +102,7 @@ module Delaware
             qi_core_profiles: qi_core_profiles,
             us_core_profiles: us_core_profiles,
             footnote: footnote,
-            footnote_target: "#{class_name.downcase.gsub(/[^a-z]/, '')}-#{element_name.downcase.gsub(/[^a-z]/, '')}"
+            footnote_target: "#{class_name.downcase.gsub(' ', '-')}-#{element_name.downcase.gsub(' ', '-')}"
           }
         end
         bucket_classes

@@ -47,14 +47,12 @@ The mapping table lists how USCDI+ Quality V1 data classes and elements map to t
 #### Notes
 
 <%- in_scope_data_elements.each do |class_name, elements| -%>
-    <%- elements.each do |name, details| -%>
-        <%- unless details[:footnote].blank? -%>
-            ##### <%= class_name %>: <%= name %>
-            <p id="<%= details[:footnote_target] %>">
-                <%= details[:footnote] %>
-            </p>
-        <%- end -%>
-    <%- end -%>
+<%- elements.each do |name, details| -%>
+<%- unless details[:footnote].blank? -%>
+##### <%= class_name %>: <%= name %>
+<%= details[:footnote] %>
+<%- end -%>
+<%- end -%>
 <%- end -%>
 
 ### Out-of-Scope USCDI+ Quality V1 Data Elements
