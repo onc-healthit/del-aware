@@ -6,7 +6,7 @@ be implemented for conformance to this guide are included in this mapping table.
 - In scope elements are determined by their support in the current USCDI+ Quality V1 baseline, which includes USCDI v3.1, US Core 6.1.0, and/or QI-Core 6.0.0.
 - In scope elements also include data elements that are used by 2026 draft CMS eCQMs, which are based on QI-Core 6.0.0.
 
-The mapping table lists how USCDI+ Quality V1 data classes and elements map to the US Quality Core profiles defined in this guide, where applicable; otherwise, US Core 6.1.0 profiles apply.
+The mapping table identifies any US Quality Core profiles defined in this guide and any US Core 6.1.0 profiles that apply to each USCDI+ Quality V1 data class or element. If neither column references a profile, this guide does not identify a specific profile for representing that element in this version; implementers may determine the appropriate implementation approach to support the data element.
 
 <table class="table table-condensed">
     <thead>
