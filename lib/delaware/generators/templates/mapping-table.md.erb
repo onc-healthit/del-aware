@@ -27,7 +27,7 @@ The mapping table lists how USCDI+ Quality V1 data classes and elements map to t
         <tbody>
             <%- elements.each do |name, details| -%>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;•<%= name %></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;•<%= name %><%- unless details[:footnote].blank? -%>&nbsp;<a href="#<%= details[:footnote_target] %>">(see note)</a><%- end -%></td>
                     <td>
                         <%- details[:qi_core_profiles].each do |profile| -%>
                             <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a><br />
@@ -43,6 +43,19 @@ The mapping table lists how USCDI+ Quality V1 data classes and elements map to t
         </tbody>
     <%- end -%>
 </table>
+
+#### Notes
+
+<%- in_scope_data_elements.each do |class_name, elements| -%>
+    <%- elements.each do |name, details| -%>
+        <%- unless details[:footnote].blank? -%>
+            ##### <%= class_name %>: <%= name %>
+            <p id="<%= details[:footnote_target] %>">
+                <%= details[:footnote] %>
+            </p>
+        <%- end -%>
+    <%- end -%>
+<%- end -%>
 
 ### Out-of-Scope USCDI+ Quality V1 Data Elements
 
