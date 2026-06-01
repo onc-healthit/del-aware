@@ -1109,6 +1109,7 @@
     "name": "Present on Admission",
     "description": "An indicator of whether a patient's condition or diagnosis was known to be present at the time of admission.",
     "bucket": 1,
+    "footnote": "In QI-Core 6.0.0, information about present on admission is represented using the Claim profile. In US Quality Core v0.5.0, support for the Claim profile is not required for conformance. We have reintroduced the Present on Admission extension for Encounter.diagnosis in US Quality Core v0.5.0 and it is (USCDI+ Quality) tagged.",
     "mappings": {
       "elements": [
         "Encounter.diagnosis.extension:diagnosisPresentOnAdmission"
@@ -2632,7 +2633,7 @@
 
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-device|9.0.0-ballot"
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-device|9.0.0"
         ]
       }
     }
@@ -4304,7 +4305,7 @@
 
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|9.0.0-ballot"
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|9.0.0"
         ]
       }
     }
