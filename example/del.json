@@ -4294,7 +4294,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
         ],
         "us_core_profiles": [
 
@@ -4305,7 +4306,7 @@
 
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|9.0.0"
+
         ]
       }
     }
