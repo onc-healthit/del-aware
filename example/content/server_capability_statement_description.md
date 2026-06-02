@@ -12,7 +12,7 @@ Some RESTFUL operations and search parameters described in the US Quality Core S
 to the US Core Server CapabilityStatement, but are listed here to highlight which
 capabilities are specifically relevant to USCDI+ Quality V1.
 
-The US Quality Core Implementation Guide v1 is derived from the QI-Core Implementation Guide STU6. It adopts
+The US Quality Core Implementation Guide v0.5.0 is derived from the QI-Core Implementation Guide STU6. It adopts
 all profiles within the [QI-Core Implementation Guide STU6](https://hl7.org/fhir/us/qicore/STU6/) to enable a more seamless adoption of this
 implementation guide.  However, only those profiles that contain USCDI+ Quality V1 data are required to be supported
 by US Quality Core Servers.  The FHIR RESTful operations and search parameters in this capability statement
