@@ -4503,15 +4503,16 @@
     "class": "Procedures",
     "name": "Procedure Type",
     "description": "The specific type of medical procedure performed.",
-    "bucket": 3,
+    "bucket": 1,
     "mappings": {
       "elements": [
-        "ServiceRequest.category",
-        "Procedure.category"
+        "ServiceRequest.code",
+        "Procedure.code"
       ],
       "current": {
         "qi_core_profiles": [
-
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure"
         ],
         "us_core_profiles": [
 
