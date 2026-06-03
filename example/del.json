@@ -890,7 +890,8 @@
       "elements": [
         "Condition.code",
         "Condition.encounter",
-        "Encounter.diagnosis"
+        "Encounter.diagnosis",
+        "Encounter.priority"
       ],
       "current": {
         "qi_core_profiles": [
