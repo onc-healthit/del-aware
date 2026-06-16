@@ -42,6 +42,8 @@ module Delaware
                                                         })
           resource.type = type
           resource.supportedProfile = supported_profiles_by_resource[type].keys
+          documentation = resource_documentation(type)
+          resource.documentation = documentation if documentation.present?
           resource.referencePolicy = ['resolves']
           resource.searchRevInclude = ['Provenance:target'] if provenance_revinclude?(type)
 
@@ -55,13 +57,15 @@ module Delaware
                                                                 })
           resource.interaction << code_interaction
 
-          search_interaction = FHIR::R4::CapabilityStatement::Rest::Resource::Interaction.new
-          search_interaction.code = 'search-type'
-          search_interaction.extension << FHIR::R4::Extension.new({
-                                                                    url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
-                                                                    valueCode: interaction_expectation(type, search_interaction.code)
-                                                                  })
-          resource.interaction << search_interaction
+          if search_type_interaction?(type)
+            search_interaction = FHIR::R4::CapabilityStatement::Rest::Resource::Interaction.new
+            search_interaction.code = 'search-type'
+            search_interaction.extension << FHIR::R4::Extension.new({
+                                                                      url: 'http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation',
+                                                                      valueCode: interaction_expectation(type, search_interaction.code)
+                                                                    })
+            resource.interaction << search_interaction
+          end
 
           # Search Parameters
 
@@ -394,6 +398,10 @@ module Delaware
         Delaware::Helpers::ContentLoader.server_capability_statement_rest_documentation
       end
 
+      def resource_documentation(resource_type)
+        Delaware::Helpers::ContentLoader.capability_statement_resource_documentation(mode, resource_type)
+      end
+
       def title
         "#{ig_name} #{mode.humanize} CapabilityStatement"
       end
@@ -416,9 +424,16 @@ module Delaware
 
       def search_param_url(resource, param, metadata = nil)
         definition = metadata&.dig(:definition)
-        return definition if definition.present?
+        return canonical_with_us_core_version(definition) if definition.present?
 
         "#{base_url}/SearchParameter/#{Config.ig_id}-#{resource.downcase}-#{param.gsub('_', '')}"
+      end
+
+      def canonical_with_us_core_version(definition)
+        return definition unless definition.include?('/us/core/')
+        return definition if definition.include?('|')
+
+        "#{definition}|#{Config.us_core_version}"
       end
 
       def requires_id_search?(resource)
@@ -464,6 +479,10 @@ module Delaware
         Delaware::Helpers::FhirResourceDetails.interaction_expectation(resource_type, interaction_code)
       end
 
+      def search_type_interaction?(resource_type)
+        Delaware::Helpers::FhirResourceDetails.search_type_interaction?(resource_type)
+      end
+
       def provenance_revinclude?(resource_type)
         Delaware::Helpers::FhirResourceDetails.provenance_revinclude?(resource_type)
       end
@@ -498,6 +517,8 @@ module Delaware
 
         # Create supporting SearchParameters
         profiles.each_value do |profile|
+          next unless supported_search_parameter_profile?(profile)
+
           resource = profile.type
           next if Delaware::Helpers::FhirResourceDetails.us_core_profile?(resource)
 
@@ -519,6 +540,34 @@ module Delaware
         end
 
         File.write(output_file_name, "#{output}\n")
+      end
+
+      def supported_search_parameter_profile?(profile)
+        supported_urls = supported_profile_urls_by_resource[profile.type]
+        return false if supported_urls.blank?
+
+        profile_canonical_urls(profile).any? do |profile_url|
+          supported_urls.any? { |supported_url| canonical_url_match?(profile_url, supported_url) }
+        end
+      end
+
+      def supported_profile_urls_by_resource
+        @supported_profile_urls_by_resource ||= data_element_list.supported_profiles_by_resource.transform_values(&:keys)
+      end
+
+      def profile_canonical_urls(profile)
+        [
+          profile.url,
+          "#{base_url}/StructureDefinition/#{profile.id}"
+        ].compact
+      end
+
+      def canonical_url_match?(left, right)
+        canonical_without_version(left).casecmp?(canonical_without_version(right))
+      end
+
+      def canonical_without_version(url)
+        url.to_s.split('|').first
       end
     end
   end
