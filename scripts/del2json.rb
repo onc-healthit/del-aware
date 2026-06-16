@@ -82,7 +82,8 @@ sheet.each(
   current_us_core_urls: /US Core v6.1.0 Profile URLs.*/,
   future_qi_core_urls: /Future versions of QI-Core Profile URLs.*/,
   future_us_core_urls: /Future versions of US Core Profile URLs.*/,
-  bucket: 'Implementation Phase / Mapping Bucket'
+  bucket: 'Implementation Phase / Mapping Bucket',
+  footnote: 'Footnote'
 ) do |hash|
   mapped_elements = as_array(hash[:elements])
   mapped_current_qi_core_profiles = as_array(hash[:current_qi_core_urls]).map { |url| clean_resource_url(url) }
@@ -101,6 +102,7 @@ sheet.each(
     name: clean_text(hash[:data_element_name]),
     description: clean_text(hash[:description]),
     bucket: clean_text(hash[:bucket].to_s).to_i,
+    footnote: clean_text(hash[:footnote]),
     mappings: {
       elements: mapped_elements.uniq,
       current: {
@@ -112,7 +114,7 @@ sheet.each(
         us_core_profiles: mapped_future_us_core_profiles.uniq
       }
     }
-  }
+  }.reject { |_k, v| v.blank? }
 end
 data = data.drop(1) # Skip headers
 

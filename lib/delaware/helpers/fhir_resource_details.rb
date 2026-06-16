@@ -23,6 +23,14 @@ module Delaware
         resource[interaction_code] || 'SHALL'
       end
 
+      def self.search_type_interaction?(resource_type)
+        !%w[
+          Location
+          Practitioner
+          PractitionerRole
+        ].include?(resource_type)
+      end
+
       def self.optional_patient_search?(resource_type)
         %w[
           CarePlan
@@ -140,7 +148,6 @@ module Delaware
         'Procedure' => { 'patient' => 'subject' },
         'Task' => { 'subject' => 'for' },
         'Immunization' => { 'vaccine-code' => 'vaccineCode' },
-        'ImagingStudy' => { 'procedure-code' => 'procedureReference.code' },
         'ImmunizationEvaluation' => { 'target-disease' => 'targetDisease' }
       }.freeze
 
@@ -170,7 +177,6 @@ module Delaware
         'Encounter' => 'type',
         'Flag' => 'code',
         'PractitionerRole' => 'code', # excluded by suppress_code_search?
-        'ImagingStudy' => 'procedureCode',
         'ImmunizationEvaluation' => 'targetDisease',
         'ServiceRequest' => 'code',
         'Medication' => 'code',

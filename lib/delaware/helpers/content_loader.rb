@@ -37,6 +37,26 @@ module Delaware
 
         File.read(path)
       end
+
+      def self.capability_statement_resource_documentation(mode, resource_type)
+        path = capability_statement_resource_documentation_path(mode, resource_type)
+
+        return nil unless File.file?(path)
+
+        log_info "Loading #{mode} capability statement #{resource_type} resource documentation content from #{path}"
+
+        File.read(path).chomp
+      end
+
+      def self.capability_statement_resource_documentation_path(mode, resource_type)
+        paths = [
+          File.join(Config.content, "#{mode}_capability_statement_resource_documentation", "#{resource_type}.md"),
+          File.join(Config.content, 'capability_statement_resource_documentation', "#{resource_type}.md")
+        ]
+        paths << File.join(Config.content, 'server_capability_statement_resource_documentation', "#{resource_type}.md") if mode == 'client'
+
+        paths.find { |path| File.file?(path) } || paths.first
+      end
     end
   end
 end

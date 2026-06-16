@@ -6,7 +6,7 @@ be implemented for conformance to this guide are included in this mapping table.
 - In scope elements are determined by their support in the current USCDI+ Quality V1 baseline, which includes USCDI v3.1, US Core 6.1.0, and/or QI-Core 6.0.0.
 - In scope elements also include data elements that are used by 2026 draft CMS eCQMs, which are based on QI-Core 6.0.0.
 
-The mapping table lists how USCDI+ Quality V1 data classes and elements map to the US Quality Core profiles defined in this guide, where applicable; otherwise, US Core 6.1.0 profiles apply.
+The mapping table identifies any US Quality Core profiles defined in this guide and any US Core 6.1.0 profiles that apply to each USCDI+ Quality V1 data class or element. If neither column references a profile, this guide does not identify a specific profile for representing that element in this version; implementers may determine the appropriate implementation approach to support the data element.
 
 <table class="table table-condensed">
     <thead>
@@ -27,7 +27,7 @@ The mapping table lists how USCDI+ Quality V1 data classes and elements map to t
         <tbody>
             <%- elements.each do |name, details| -%>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;•<%= name %></td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;•<%= name %><%- unless details[:footnote].blank? -%>&nbsp;<a href="#<%= details[:footnote_target] %>">(see note)</a><%- end -%></td>
                     <td>
                         <%- details[:qi_core_profiles].each do |profile| -%>
                             <a href="<%= profile[:link] || '' %>"><%= profile[:title] || '' %></a><br />
@@ -44,6 +44,17 @@ The mapping table lists how USCDI+ Quality V1 data classes and elements map to t
     <%- end -%>
 </table>
 
+#### Notes
+
+<%- in_scope_data_elements.each do |class_name, elements| -%>
+<%- elements.each do |name, details| -%>
+<%- unless details[:footnote].blank? -%>
+##### <%= class_name %>: <%= name %>
+<%= details[:footnote] %>
+<%- end -%>
+<%- end -%>
+<%- end -%>
+
 ### Out-of-Scope USCDI+ Quality V1 Data Elements
 
 The following data elements in USCDI+ Quality V1 are out of scope for the
@@ -53,7 +64,7 @@ here may map to newer published versions of QI-Core or US Core, and the applicab
 USCDI+ Quality V1 elements that do not have a
 mapping in the table below indicate those elements are not identified as mandatory or Must Support, or tagged
 (QI), (QI-Core), or "Additional USCDI" in any of the newer versions of QI-Core or
-US Core, including QI-Core 7.0.1 and 8.0.0-ballot, US Core 7.0.0, 8.0.1, and 9.0.0-ballot.
+US Core, including QI-Core 7.0.2 and 8.0.0-ballot, US Core 7.0.0, 8.0.1, and 9.0.0.
 
 <table class="table table-condensed">
     <thead>

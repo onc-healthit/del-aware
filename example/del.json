@@ -778,11 +778,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy"
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
         ]
       },
       "future": {
@@ -858,14 +855,14 @@
     "name": "Diagnosis Rank",
     "description": "Ordinal number or code that identifies the priority or significance of a diagnosis for a given encounter.",
     "bucket": 1,
+    "footnote": "In QI-Core 6.0.0, information about principal diagnosis is represented using the Claim profile. In US Quality Core v0.5.0, support for the Claim profile is not required for conformance. Implementers may determine the appropriate implementation approach to support this USCDI+ Quality data element. We encourage the quality community to provide additional input on information needed to support quality measurement use cases through the HL7 ballot process for US Quality Core.",
     "mappings": {
       "elements": [
-        "Claim.diagnosis",
-        "Claim.diagnosis.sequence"
+
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"
+
         ],
         "us_core_profiles": [
 
@@ -890,7 +887,8 @@
       "elements": [
         "Condition.code",
         "Condition.encounter",
-        "Encounter.diagnosis"
+        "Encounter.diagnosis",
+        "Encounter.priority"
       ],
       "current": {
         "qi_core_profiles": [
@@ -1109,14 +1107,14 @@
     "name": "Present on Admission",
     "description": "An indicator of whether a patient's condition or diagnosis was known to be present at the time of admission.",
     "bucket": 1,
+    "footnote": "In QI-Core 6.0.0, information about present on admission is represented using the Claim profile. In US Quality Core v0.5.0, support for the Claim profile is not required for conformance. We have reintroduced the Present on Admission extension for Encounter.diagnosis in US Quality Core v0.5.0 and it is (USCDI+ Quality) tagged.",
     "mappings": {
       "elements": [
-        "Claim.diagnosis.onAdmission",
-        "Claim.diagnosis.diagnosis[x]"
+        "Encounter.diagnosis.extension:diagnosisPresentOnAdmission"
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-claim"
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-encounter"
         ],
         "us_core_profiles": [
 
@@ -2633,7 +2631,7 @@
 
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-device|9.0.0-ballot"
+          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-device|9.0.0"
         ]
       }
     }
@@ -4294,7 +4292,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-problems-health-concerns",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-condition-encounter-diagnosis"
         ],
         "us_core_profiles": [
 
@@ -4305,7 +4304,7 @@
 
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns|9.0.0-ballot"
+
         ]
       }
     }
@@ -4501,15 +4500,16 @@
     "class": "Procedures",
     "name": "Procedure Type",
     "description": "The specific type of medical procedure performed.",
-    "bucket": 3,
+    "bucket": 1,
     "mappings": {
       "elements": [
-        "ServiceRequest.category",
-        "Procedure.category"
+        "ServiceRequest.code",
+        "Procedure.code"
       ],
       "current": {
         "qi_core_profiles": [
-
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-servicerequest",
+          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-procedure"
         ],
         "us_core_profiles": [
 
@@ -4530,6 +4530,7 @@
     "name": "Procedures",
     "description": "Activity performed for or on a patient as part of the provision of care.",
     "bucket": 1,
+    "footnote": "In QI-Core 6.0.0, information about principal procedure is represented using the Claim profile. In US Quality Core v0.5.0, support for the Claim profile is not required for conformance. Implementers may determine the appropriate implementation approach to support this USCDI+ Quality data element. We encourage the quality community to provide additional input on information needed to support quality measurement use cases through the HL7 ballot process for US Quality Core.",
     "mappings": {
       "elements": [
         "Procedure.code",

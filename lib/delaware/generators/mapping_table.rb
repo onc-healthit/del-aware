@@ -95,10 +95,14 @@ module Delaware
           # Self IG takes precedent over US Core. TODO: Make this behavior configurable?
           us_core_profiles = [] unless qi_core_profiles.empty?
 
+          footnote = mapping['footnote']
+
           bucket_classes[class_name][element_name] = {
             elements: elements,
             qi_core_profiles: qi_core_profiles,
-            us_core_profiles: us_core_profiles
+            us_core_profiles: us_core_profiles,
+            footnote: footnote,
+            footnote_target: "#{class_name.downcase.gsub(' ', '-')}-#{element_name.downcase.gsub(' ', '-')}"
           }
         end
         bucket_classes
