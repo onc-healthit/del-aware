@@ -778,11 +778,8 @@
       ],
       "current": {
         "qi_core_profiles": [
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-diagnosticreport-note",
-          "http://fhir.org/guides/onc/us-quality-core/StructureDefinition/us-quality-core-imagingstudy"
         ],
         "us_core_profiles": [
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference|6.1.0"
         ]
       },
       "future": {
